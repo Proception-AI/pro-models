@@ -1,0 +1,51 @@
+Proception Mesh Geometry License
+
+Copyright (c) 2025-2026 Proception Inc.
+Website: https://proception.ai
+
+================================================================================
+SCOPE
+================================================================================
+
+This license covers the 3D mesh geometry under assets/meshes/ (all *.obj
+and *.stl files, including both convex and optimized variants), as well as
+mesh geometry embedded inside model files (e.g. USD, FBX). The mesh
+geometry is proprietary to Proception Inc. and is NOT covered by the
+BSD 3-Clause License that applies to other components of this repository
+(see LICENSE.txt).
+
+================================================================================
+GRANT OF LICENSE
+================================================================================
+
+The mesh files are provided as reference geometry for evaluation and
+reference purposes only. You may download and use them to evaluate and
+simulate the ProHand series of robotic hands.
+
+================================================================================
+RESTRICTIONS
+================================================================================
+
+Without prior written permission from Proception Inc., you may NOT:
+
+  - use the mesh geometry to develop, manufacture, or reproduce a competing
+    product, including fabricating physical parts from it,
+  - redistribute the mesh files or any part of them,
+  - modify the mesh files and distribute the modified versions,
+  - incorporate the mesh files into a product or commercial offering, or
+  - use the mesh files for any commercial purpose.
+
+================================================================================
+NO WARRANTY
+================================================================================
+
+THE MESH FILES ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED.
+
+================================================================================
+CONTACT
+================================================================================
+
+For licensing inquiries:
+Email: contact@proception.ai
+Website: https://proception.ai

@@ -1,0 +1,115 @@
+# (c) 2025-2026 Proception Inc. All rights reserved.
+# Proprietary mesh geometry - see MESHES-LICENSE at the repository root.
+#
+# Mesh Geometry License - Proception Simulation Models
+#
+# This 3D mesh geometry is (c) 2025-2026 Proception Inc. ("Proception AI").
+# It is provided as reference geometry for evaluating and simulating the
+# ProHand series of robotic hands. Without prior written permission from
+# Proception Inc., you may NOT:
+#
+#   - use this geometry to develop, manufacture, or reproduce a competing
+#     product, including fabricating physical parts from it,
+#   - redistribute this geometry or any part of it,
+#   - modify this geometry and distribute the modified versions,
+#   - incorporate this geometry into a product or commercial offering, or
+#   - use this geometry for any commercial purpose.
+#
+# THIS GEOMETRY IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+# OR IMPLIED.
+#
+# For licensing inquiries, contact Proception Inc. at contact@proception.ai.
+# https://github.com/mikedh/trimesh
+v -0.03075000 0.01500000 0.00000000
+v -0.03075000 0.01500000 0.00100000
+v -0.03034808 0.01650000 0.00000000
+v -0.03034808 0.01650000 0.00100000
+v -0.02925000 0.01759808 0.00000000
+v -0.02925000 0.01759808 0.00100000
+v -0.02775000 0.01800000 0.00000000
+v -0.02775000 0.01800000 0.00100000
+v -0.03075000 -0.01500000 0.00000000
+v -0.03075000 -0.01500000 0.00100000
+v 0.02775000 0.01800000 0.00000000
+v 0.03075000 0.01500000 0.00000000
+v 0.03034808 0.01650000 0.00000000
+v 0.02925000 0.01759808 0.00000000
+v 0.03075000 -0.01500000 0.00000000
+v -0.02775000 -0.01800000 0.00000000
+v 0.02775000 -0.01800000 0.00000000
+v 0.03034808 -0.01650000 0.00000000
+v 0.02925000 -0.01759808 0.00000000
+v -0.02925000 -0.01759808 0.00000000
+v -0.03034808 -0.01650000 0.00000000
+v 0.02775000 0.01800000 0.00100000
+v 0.02925000 0.01759808 0.00100000
+v 0.03034808 0.01650000 0.00100000
+v 0.03075000 0.01500000 0.00100000
+v 0.03075000 -0.01500000 0.00100000
+v 0.03034808 -0.01650000 0.00100000
+v 0.02925000 -0.01759808 0.00100000
+v 0.02775000 -0.01800000 0.00100000
+v -0.02775000 -0.01800000 0.00100000
+v -0.02925000 -0.01759808 0.00100000
+v -0.03034808 -0.01650000 0.00100000
+f 1 9 10
+f 10 2 1
+f 26 15 12
+f 12 25 26
+f 31 20 16
+f 16 30 31
+f 29 17 19
+f 29 19 28
+f 16 17 29
+f 29 30 16
+f 7 5 6
+f 6 8 7
+f 19 18 27
+f 28 19 27
+f 27 18 15
+f 15 26 27
+f 32 10 9
+f 9 21 32
+f 32 21 20
+f 20 31 32
+f 22 11 7
+f 7 8 22
+f 22 14 11
+f 22 23 14
+f 13 9 1
+f 1 3 13
+f 13 17 16
+f 12 15 13
+f 16 20 13
+f 13 5 7
+f 7 11 13
+f 13 21 9
+f 13 18 19
+f 19 17 13
+f 13 3 5
+f 11 14 13
+f 15 18 13
+f 20 21 13
+f 1 2 4
+f 4 3 1
+f 5 3 4
+f 4 6 5
+f 24 4 2
+f 24 31 30
+f 2 10 24
+f 24 22 8
+f 24 29 28
+f 24 26 25
+f 28 27 24
+f 30 29 24
+f 10 32 24
+f 8 6 24
+f 24 27 26
+f 24 32 31
+f 23 22 24
+f 6 4 24
+f 24 25 12
+f 12 13 24
+f 14 23 24
+f 24 13 14
+
