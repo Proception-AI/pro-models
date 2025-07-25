@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="BothHandsScene">
+    <compiler coordinate="local" angle="radian" meshdir="../../assets/meshes" />
+    <include file="common_scene.xml"/>
+    <include file="../../assets/mjcf/gen_1_D_R/include_ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_config.xml"/>
+    <include file="../../assets/mjcf/gen_1_D_L/include_ASY__LEFT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_config.xml"/>
+
+    <worldbody>
+        <body name="RHand" pos="0.0000000 0.1000000 0.0000000" quat="1e+00 0e+00 0e+00 0e+00">
+            <include file="../../assets/mjcf/gen_1_D_R/include_ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_chain.xml"/>
+        </body>
+        <body name="LHand" pos="0.0000000 -0.1000000 0.0000000" quat="1e+00 0e+00 0e+00 0e+00">
+            <include file="../../assets/mjcf/gen_1_D_L/include_ASY__LEFT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_chain.xml"/>
+        </body>
+    </worldbody>
+</mujoco>

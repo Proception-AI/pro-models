@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="LeftHandScene">
+    <compiler coordinate="local" angle="radian" meshdir="../../assets/meshes" />
+    <include file="common_scene.xml"/>
+    <include file="../../assets/mjcf/gen_1_D_L/include_ASY__LEFT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_config.xml"/>
+
+    <worldbody>
+        <include file="../../assets/mjcf/gen_1_D_L/include_ASY__LEFT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_chain.xml"/>
+    </worldbody>
+
+</mujoco>
