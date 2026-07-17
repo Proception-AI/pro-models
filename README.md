@@ -2,7 +2,7 @@
 
 <toc>
 
-[*Last generated: Wed May 20 2026*]
+[*Last generated: Fri Jul 17 2026*]
 - [Table of Contents](#table-of-contents)
 - [Pro-Models: Professional Hand Simulation Models](#pro-models-professional-hand-simulation-models)
   - [Overview](#overview)
@@ -183,6 +183,10 @@ If you use these models in your research, please cite:
 ## Support
 
 If you have questions, encounter issues, or would like to request a feature, feel free to open a GitHub issue.
+
+## Related Projects
+
+- **ProHand Gen1** — the physical hand these models represent. Product page: [proception.ai/product/pro-hand/gen1](https://www.proception.ai/product/pro-hand/gen1)
 
 <eof>
 
