@@ -2,26 +2,26 @@
 
 <toc>
 
-[*Last generated: Fri Jul 17 2026*]
-- [Table of Contents](#table-of-contents)
-- [Pro-Models: Professional Hand Simulation Models](#pro-models-professional-hand-simulation-models)
-  - [Overview](#overview)
-  - [Model Structure](#model-structure)
-  - [Collision Representations](#collision-representations)
-    - [Convex Hull Representation](#convex-hull-representation)
-    - [Capsule Hybrid Representation](#capsule-hybrid-representation)
-  - [Quick Start](#quick-start)
-    - [Installation](#installation)
-    - [Running the Example Viewer](#running-the-example-viewer)
-  - [Joint Configuration](#joint-configuration)
-  - [Performance Considerations](#performance-considerations)
-    - [Mesh Selection](#mesh-selection)
-    - [Collision Detection](#collision-detection)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Citation](#citation)
-  - [Support](#support)
-  - [Related Projects](#related-projects)
+[*Last generated: Sun Jul 26 21:46:48 PDT 2026*]
+- [**Pro-Models: Professional Hand Simulation Models**](#Pro-Models-Professional-Hand-Simulation-Models)
+  - [Overview](#Overview)
+  - [Model Structure](#Model-Structure)
+  - [Collision Representations](#Collision-Representations)
+    - [Convex Hull Representation](#Convex-Hull-Representation)
+    - [Capsule Hybrid Representation](#Capsule-Hybrid-Representation)
+  - [Isaac Sim (USD)](#Isaac-Sim-USD)
+  - [Quick Start](#Quick-Start)
+    - [Installation](#Installation)
+    - [Running the Example Viewer](#Running-the-Example-Viewer)
+  - [Joint Configuration](#Joint-Configuration)
+  - [Performance Considerations](#Performance-Considerations)
+    - [Mesh Selection](#Mesh-Selection)
+    - [Collision Detection](#Collision-Detection)
+  - [Contributing](#Contributing)
+  - [License](#License)
+  - [Citation](#Citation)
+  - [Support](#Support)
+  - [Related Projects](#Related-Projects)
 
 </toc>
 
@@ -65,9 +65,14 @@ assets/
 │       ├── include_ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_config.xml
 │       ├── include_ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_capsule_hybrid_chain.xml
 │       └── include_ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_capsule_hybrid_config.xml
-└── urdf/
-    ├── gen_1_D_L/                 # URDF exports (convex, optimized)
-    └── gen_1_D_R/                 # URDF exports (convex, optimized)
+├── urdf/
+│   ├── gen_1_D_L/                 # URDF exports (convex, optimized)
+│   └── gen_1_D_R/                 # URDF exports (convex, optimized)
+└── usd/
+    ├── gen_1_D_L/                 # Isaac Sim / PhysX USD (see Isaac Sim below)
+    └── gen_1_D_R/
+        ├── gen_1_D_R.usda         # Entry layer — open this one
+        └── configuration/         # base / physics / robot / sensor sublayers
 ```
 
 ## Collision Representations
@@ -83,6 +88,31 @@ Each hand model provides two collision representation options:
 - **File Pattern**: `*_capsule_hybrid_*.xml`
 - **Advantages**: Faster and simpler collision detection, for contact-rich simulation
 - **Use Cases**: Research, fast simulation, contact analysis
+
+## Isaac Sim (USD)
+
+`assets/usd/` holds the same two hands as PhysX-ready USD articulations for
+[Isaac Sim](https://developer.nvidia.com/isaac/sim) and Isaac Lab. Each model
+is one entry layer plus its `configuration/` sublayers; open the entry layer:
+
+```python
+from isaaclab.sim import UsdFileCfg
+
+cfg = UsdFileCfg(usd_path="assets/usd/gen_1_D_R/gen_1_D_R.usda")
+```
+
+- **Self-contained** — mesh geometry is embedded in the layers, so nothing
+  under `assets/meshes/` is needed and the model can be relocated as a folder.
+  Note this makes the layers subject to the mesh license (see
+  [License](#license)).
+- **Single free-floating articulation root** with per-joint drive gains and
+  rest-overlap self-collision filters already applied, so it loads and
+  simulates without further fix-up.
+- **Variant sets** — `Physics` (`PhysX` / `None`) and `Sensor` (`Sensors` /
+  `None`); the defaults are `PhysX` and `Sensors`.
+- **Collision geometry** is a reduced convex-hull set, chosen for solver
+  stability rather than fidelity, and is coarser than the `convex` meshes under
+  `assets/meshes/`. For capsule-hybrid collisions, use the MJCF models.
 
 ## Quick Start
 
@@ -148,15 +178,21 @@ We welcome contributions to improve the models, add new features, or enhance doc
 
 This repository uses a dual license:
 
-- **Code, MJCF and URDF configuration files, and documentation** are released under the
+- **Code, MJCF/URDF/USD model description, and documentation** are released under the
   **BSD 3-Clause License** — free for academic, research, **and commercial** use. See
   [LICENSE.txt](./LICENSE.txt) for the full text.
-- **Mesh geometry** (all `*.obj` and `*.stl` files under `assets/meshes/`) is
-  **proprietary** — © Proception Inc., provided for evaluation and simulation
-  of the ProHand series only. Using the geometry to reproduce a competing
-  product, redistribution, modification-and-redistribution, and commercial
-  use require prior written permission. See
+- **Mesh geometry** is **proprietary** — © Proception Inc., provided for
+  evaluation and simulation of the ProHand series only. This covers all
+  `*.obj` and `*.stl` files under `assets/meshes/` **and mesh geometry embedded
+  inside model files**, which for the USD models under `assets/usd/` means the
+  geometry baked into the `.usda` layers themselves. Using the geometry to
+  reproduce a competing product, redistribution, modification-and-redistribution,
+  and commercial use require prior written permission. See
   [MESHES-LICENSE](./MESHES-LICENSE) for the full terms.
+
+The two licenses can meet inside one file: a `.usda` layer carries BSD-licensed
+model description *and* proprietary embedded geometry. Each published layer
+states both sets of terms in a comment header.
 
 For everything BSD-licensed, you may use, modify, redistribute, and build
 products on top of it; the conditions are that the copyright notice and
@@ -191,5 +227,5 @@ If you have questions, encounter issues, or would like to request a feature, fee
 <eof>
 
 ---
-[*> Back To Top <*](#Table-of-Contents) | © 2024-2026 Proception Inc. All rights reserved.
+[*> Back To Top <*](#Table-of-Contents) | Rights Reserved @ Proception AI, Inc. 2024-2025
 </eof>

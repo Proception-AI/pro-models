@@ -1,0 +1,1570 @@
+#usda 1.0
+# (c) 2025-2026 Proception Inc. All rights reserved.
+# Embedded mesh geometry is proprietary - see MESHES-LICENSE at the repository root.
+#
+# BSD 3-Clause License
+#
+# Copyright (c) 2025-2026, Proception Inc.
+#
+# This license applies to this model file only. Mesh geometry (mesh files
+# and any mesh geometry embedded in this file) is proprietary to Proception
+# Inc. and licensed separately under the mesh geometry license terms.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+# 1. Redistributions of source code must retain the above copyright notice,
+#    this list of conditions and the following disclaimer.
+#
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# 3. Neither the name of the copyright holder nor the names of its
+#    contributors may be used to endorse or promote products derived from
+#    this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+# TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+# PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+# CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+# PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+# LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+# NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+# SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# For licensing inquiries, contact Proception Inc. at contact@proception.ai.
+#
+# The mesh geometry embedded in this file is licensed under the following terms:
+#
+# Mesh Geometry License - Proception Simulation Models
+#
+# This 3D mesh geometry is (c) 2025-2026 Proception Inc. ("Proception AI").
+# It is provided as reference geometry for evaluating and simulating the
+# ProHand series of robotic hands. Without prior written permission from
+# Proception Inc., you may NOT:
+#
+#   - use this geometry to develop, manufacture, or reproduce a competing
+#     product, including fabricating physical parts from it,
+#   - redistribute this geometry or any part of it,
+#   - modify this geometry and distribute the modified versions,
+#   - incorporate this geometry into a product or commercial offering, or
+#   - use this geometry for any commercial purpose.
+#
+# THIS GEOMETRY IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+# OR IMPLIED.
+#
+# For licensing inquiries, contact Proception Inc. at contact@proception.ai.
+(
+    defaultPrim = "ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified"
+    metersPerUnit = 1
+    subLayers = [
+        @gen_1_D_R_base.usda@
+    ]
+    upAxis = "Z"
+)
+
+def Xform "ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified"
+{
+    over "R_right_forearm_chs"
+    {
+        over "R_right_forearm_chs" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsArticulationRootAPI", "PhysxArticulationAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (-0.0000386, 0.1070748, 0.0191471)
+            float3 physics:diagonalInertia = (0.02022766, 0.004968134, 0.02094171)
+            prepend rel physics:filteredPairs = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_wrist_ujoint>
+            float physics:mass = 5.753624
+            bool physxArticulation:enabledSelfCollisions = 0
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_chs>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_bottom_virtual_cover1" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (0, 0, 0.0005)
+            float3 physics:diagonalInertia = (0.00000186024, 0.000005424478, 0.000007281831)
+            float physics:mass = 0.0173193
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_bottom_virtual_cover1>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_cover1" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (-7e-7, 0.2137, 0.0216575)
+            float3 physics:diagonalInertia = (0.00002833063, 0.00006341319, 0.00003509025)
+            prepend rel physics:filteredPairs = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_wrist_ujoint>
+            float physics:mass = 0.0462142
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_cover1>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_wrist_base" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (0.0000046, 0.0061671, 0.0004368)
+            float3 physics:diagonalInertia = (0.000005728056, 0.00001163974, 0.000007998322)
+            prepend rel physics:filteredPairs = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_palm>
+            float physics:mass = 0.0249763
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_wrist_base>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_wrist_ujoint" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (0.0124664, 0, -0.0032079)
+            float3 physics:diagonalInertia = (0.00001237338, 0.000006708757, 0.00001103105)
+            prepend rel physics:filteredPairs = [
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_chs>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_cover1>,
+            ]
+            float physics:mass = 0.0512518
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_wrist_ujoint>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_palm" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (-0.0003189, -0.0536559, -0.0027915)
+            float3 physics:diagonalInertia = (0.0001970173, 0.00008125984, 0.0001359965)
+            prepend rel physics:filteredPairs = [
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d01_prox>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d02_prox>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d03_prox>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_pinky_prox>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_thumb_meta>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_thumb_trap>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_wrist_base>,
+            ]
+            float physics:mass = 0.1455486
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_palm>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_gen1d01_meta" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (5e-7, 0.0024378, 0.0002621)
+            float3 physics:diagonalInertia = (1.669168e-7, 1.661503e-7, 1.100527e-7)
+            float physics:mass = 0.0043138
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_gen1d01_meta>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_gen1d01_prox" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (0.0020036, -0.0200417, 0)
+            float3 physics:diagonalInertia = (0.000001537877, 4.011074e-7, 0.000001416463)
+            prepend rel physics:filteredPairs = [
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d02_meta>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d02_prox>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_palm>,
+            ]
+            float physics:mass = 0.0107138
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_gen1d01_prox>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_gen1d01_med" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (0.0017364, -0.0116914, -0)
+            float3 physics:diagonalInertia = (3.546328e-7, 1.970482e-7, 3.013907e-7)
+            prepend rel physics:filteredPairs = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d02_prox>
+            float physics:mass = 0.0053193
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_gen1d01_med>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_gen1d01_dist" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (-0.0029017, -0.0133183, 0)
+            float3 physics:diagonalInertia = (4.271275e-7, 1.726438e-7, 4.189138e-7)
+            prepend rel physics:filteredPairs = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d02_med>
+            float physics:mass = 0.0062029
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_gen1d01_dist>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_gen1d02_meta" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (5e-7, 0.0024378, 0.0002621)
+            float3 physics:diagonalInertia = (1.669168e-7, 1.661503e-7, 1.100527e-7)
+            prepend rel physics:filteredPairs = [
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d01_prox>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d03_prox>,
+            ]
+            float physics:mass = 0.0043138
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_gen1d02_meta>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_gen1d02_prox" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (0.0020036, -0.0200417, 0)
+            float3 physics:diagonalInertia = (0.000001537877, 4.011074e-7, 0.000001416463)
+            prepend rel physics:filteredPairs = [
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d01_med>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d01_prox>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d03_med>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d03_prox>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_palm>,
+            ]
+            float physics:mass = 0.0107138
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_gen1d02_prox>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_gen1d02_med" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (0.0017364, -0.0116914, -0)
+            float3 physics:diagonalInertia = (3.546328e-7, 1.970482e-7, 3.013907e-7)
+            prepend rel physics:filteredPairs = [
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d01_dist>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d03_med>,
+            ]
+            float physics:mass = 0.0053193
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_gen1d02_med>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_gen1d02_dist" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (-0.0029017, -0.0133183, 0)
+            float3 physics:diagonalInertia = (4.271275e-7, 1.726438e-7, 4.189138e-7)
+            float physics:mass = 0.0062029
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_gen1d02_dist>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_gen1d03_meta" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (5e-7, 0.0024378, 0.0002621)
+            float3 physics:diagonalInertia = (1.669168e-7, 1.661503e-7, 1.100527e-7)
+            prepend rel physics:filteredPairs = [
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_pinky_meta>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_pinky_prox>,
+            ]
+            float physics:mass = 0.0043138
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_gen1d03_meta>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_gen1d03_prox" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (0.0020036, -0.0200417, 0)
+            float3 physics:diagonalInertia = (0.000001537877, 4.011074e-7, 0.000001416463)
+            prepend rel physics:filteredPairs = [
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d02_meta>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d02_prox>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_palm>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_pinky_med>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_pinky_prox>,
+            ]
+            float physics:mass = 0.0107138
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_gen1d03_prox>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_gen1d03_med" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (0.0017364, -0.0116914, -0)
+            float3 physics:diagonalInertia = (3.546328e-7, 1.970482e-7, 3.013907e-7)
+            prepend rel physics:filteredPairs = [
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d02_med>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d02_prox>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_pinky_med>,
+            ]
+            float physics:mass = 0.0053193
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_gen1d03_med>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_gen1d03_dist" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (-0.0029017, -0.0133183, 0)
+            float3 physics:diagonalInertia = (4.271275e-7, 1.726438e-7, 4.189138e-7)
+            float physics:mass = 0.0062029
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_gen1d03_dist>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_pinky_meta" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (5e-7, 0.0024378, 0.0002621)
+            float3 physics:diagonalInertia = (1.669168e-7, 1.661503e-7, 1.100527e-7)
+            prepend rel physics:filteredPairs = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d03_meta>
+            float physics:mass = 0.0043138
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_pinky_meta>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_pinky_prox" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (0.00185, -0.0155669, -1e-7)
+            float3 physics:diagonalInertia = (7.286889e-7, 2.804494e-7, 6.285112e-7)
+            prepend rel physics:filteredPairs = [
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d03_meta>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d03_prox>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_palm>,
+            ]
+            float physics:mass = 0.00765
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_pinky_prox>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_pinky_med" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (0.0017364, -0.0116914, -0)
+            float3 physics:diagonalInertia = (3.546328e-7, 1.970482e-7, 3.013907e-7)
+            prepend rel physics:filteredPairs = [
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d03_med>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d03_prox>,
+            ]
+            float physics:mass = 0.0053193
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_pinky_med>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_pinky_dist" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (-0.0029017, -0.0133183, 0)
+            float3 physics:diagonalInertia = (4.271275e-7, 1.726438e-7, 4.189138e-7)
+            float physics:mass = 0.0062029
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_pinky_dist>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_thumb_base" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (-0.0025202, 0.0129502, -0.0053902)
+            float3 physics:diagonalInertia = (0.000001263181, 4.813414e-7, 0.000001280585)
+            prepend rel physics:filteredPairs = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_thumb_meta>
+            float physics:mass = 0.0070445
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_thumb_base>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_thumb_trap" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (-0.0004402, -0.0025199, -0.0007116)
+            float3 physics:diagonalInertia = (5.613289e-7, 6.417263e-7, 4.19855e-7)
+            prepend rel physics:filteredPairs = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_palm>
+            float physics:mass = 0.0081085
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_thumb_trap>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_thumb_meta" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (0.0124978, -0.0008121, 0.0024301)
+            float3 physics:diagonalInertia = (0.00000177283, 0.000002210062, 0.000001944541)
+            prepend rel physics:filteredPairs = [
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_palm>,
+                </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_thumb_base>,
+            ]
+            float physics:mass = 0.0179407
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_thumb_meta>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_thumb_prox" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (0.0001398, 0.0158835, 0.000115)
+            float3 physics:diagonalInertia = (0.000001572135, 6.250965e-7, 0.000001419345)
+            float physics:mass = 0.0124315
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_thumb_prox>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+
+        over "R_right_forearm_thumb_dist" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysxRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (0.0002198, 0.0155028, -0)
+            float3 physics:diagonalInertia = (0.000001342975, 3.977205e-7, 0.000001294658)
+            float physics:mass = 0.0115699
+
+            def Xform "collisions" (
+                instanceable = true
+                prepend references = </collisions/R_right_forearm_thumb_dist>
+            )
+            {
+                token visibility = "invisible"
+            }
+        }
+    }
+
+    over "joints"
+    {
+        def PhysicsFixedJoint "R_right_forearm_bottom_virtual_cover1"
+        {
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_chs>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_bottom_virtual_cover1>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0.005, 0.02)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.7071068, -0.7071068, 3.70192e-15, -4.5206e-15)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "R_right_forearm_cover1"
+        {
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_chs>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_cover1>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0.012, -0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, -0, -3.062e-17, -0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "R_right_forearm_wrist_base"
+        {
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_chs>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_wrist_base>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0.2132, 0.01545)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 7.643e-17, 3.072e-17, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsRevoluteJoint "R_wrist_abd" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_wrist_base>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_wrist_ujoint>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0.019999996, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.50000006, 0.50000006, 0.50000006, -0.50000006)
+            quatf physics:localRot1 = (0.7071069, 0, -0.7071069, 0)
+            float physics:lowerLimit = -30
+            float physics:upperLimit = 30
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsRevoluteJoint "R_wrist_flex" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_wrist_ujoint>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_palm>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0.017999992, 0, -0.0050000018)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.7071069, 0, 0, 0.7071069)
+            quatf physics:localRot1 = (0.7071069, 0, -0.7071069, 0)
+            float physics:lowerLimit = -30
+            float physics:upperLimit = 65
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsRevoluteJoint "R_i0_CMC_abd" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_palm>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d01_meta>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0.0010000002, -0.09800005, 0.031000009)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0, 0, 0, 1.0000002)
+            quatf physics:localRot1 = (0.70710695, 0, -0.70710695, 0)
+            float physics:lowerLimit = -15
+            float physics:upperLimit = 30
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsRevoluteJoint "R_i1_MCP" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d01_meta>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d01_prox>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (1.4901161e-8, 0.006972432, 0.000011980534)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0, 0, 0, 1.0000004)
+            quatf physics:localRot1 = (0.70710707, 0, -0.70710707, 0)
+            float physics:lowerLimit = -19.999996
+            float physics:upperLimit = 89.99998
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsRevoluteJoint "R_i2_PIP" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d01_prox>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d01_med>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, -0.042000026, -1.8626451e-9)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710707, 0, -0.70710707, 0)
+            quatf physics:localRot1 = (0.70710707, -1.8495091e-16, -0.70710707, 7.4345246e-17)
+            float physics:lowerLimit = -19.999996
+            float physics:upperLimit = 89.99998
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsRevoluteJoint "R_i3_DIP" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d01_med>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d01_dist>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0.0040000062, -0.02000001, 3.7252903e-9)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710707, -1.8495091e-16, -0.70710707, 7.4345246e-17)
+            quatf physics:localRot1 = (0.70710707, -1.2550444e-16, -0.70710707, 6.481697e-17)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 89.99998
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsRevoluteJoint "R_m0_CMC_abd" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_palm>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d02_meta>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0.0010000002, -0.10800001, 0.010000003)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0, 0, 0, 1.0000002)
+            quatf physics:localRot1 = (0.70710695, 0, -0.70710695, 0)
+            float physics:lowerLimit = -15
+            float physics:upperLimit = 15
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsRevoluteJoint "R_m1_MCP" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d02_meta>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d02_prox>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (-1.4901161e-8, 0.006972432, 0.000012010336)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0, 0, 0, 1.0000004)
+            quatf physics:localRot1 = (0.70710707, 0, -0.70710707, 0)
+            float physics:lowerLimit = -19.999996
+            float physics:upperLimit = 89.99998
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsRevoluteJoint "R_m2_PIP" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d02_prox>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d02_med>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, -0.042000055, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710707, 0, -0.70710707, 0)
+            quatf physics:localRot1 = (0.70710707, -1.8495091e-16, -0.70710707, 7.4345246e-17)
+            float physics:lowerLimit = -19.999996
+            float physics:upperLimit = 89.99998
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsRevoluteJoint "R_m3_DIP" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d02_med>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d02_dist>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0.0040000062, -0.01999998, -9.313226e-10)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710707, -1.8495091e-16, -0.70710707, 7.4345246e-17)
+            quatf physics:localRot1 = (0.70710707, -1.2550444e-16, -0.70710707, 6.481697e-17)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 89.99998
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsRevoluteJoint "R_r0_CMC_abd" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_palm>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d03_meta>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0.0010000002, -0.09800005, -0.011000004)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0, 0, 0, 1.0000002)
+            quatf physics:localRot1 = (0.70710695, 0, -0.70710695, 0)
+            float physics:lowerLimit = -15
+            float physics:upperLimit = 15
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsRevoluteJoint "R_r1_MCP" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d03_meta>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d03_prox>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0.006972432, 0.000012010336)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0, 0, 0, 1.0000004)
+            quatf physics:localRot1 = (0.70710707, 0, -0.70710707, 0)
+            float physics:lowerLimit = -19.999996
+            float physics:upperLimit = 89.99998
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsRevoluteJoint "R_r2_PIP" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d03_prox>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d03_med>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, -0.042000026, 9.313226e-10)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710707, 0, -0.70710707, 0)
+            quatf physics:localRot1 = (0.70710707, -1.8495091e-16, -0.70710707, 7.4345246e-17)
+            float physics:lowerLimit = -19.999996
+            float physics:upperLimit = 89.99998
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsRevoluteJoint "R_r3_DIP" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d03_med>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_gen1d03_dist>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0.0040000062, -0.02000001, -9.313226e-10)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710707, -1.8495091e-16, -0.70710707, 7.4345246e-17)
+            quatf physics:localRot1 = (0.70710707, -1.2550444e-16, -0.70710707, 6.481697e-17)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 89.99998
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsRevoluteJoint "R_p0_CMC_abd" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_palm>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_pinky_meta>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0.0010000002, -0.093000025, -0.03200001)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0, 0, 0, 1.0000002)
+            quatf physics:localRot1 = (0.70710695, 0, -0.70710695, 0)
+            float physics:lowerLimit = -34.999996
+            float physics:upperLimit = 15
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsRevoluteJoint "R_p1_MCP" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_pinky_meta>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_pinky_prox>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (-2.9802322e-8, 0.0069724023, 0.000011995435)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0, 0, 0, 1.0000004)
+            quatf physics:localRot1 = (0.70710707, 0, -0.70710707, 0)
+            float physics:lowerLimit = -19.999996
+            float physics:upperLimit = 89.99998
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsRevoluteJoint "R_p2_PIP" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_pinky_prox>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_pinky_med>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, -0.031999975, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710707, 0, -0.70710707, 0)
+            quatf physics:localRot1 = (0.70710707, -1.8495091e-16, -0.70710707, 7.4345246e-17)
+            float physics:lowerLimit = -19.999996
+            float physics:upperLimit = 89.99998
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsRevoluteJoint "R_p3_DIP" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_pinky_med>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_pinky_dist>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0.0040000062, -0.02000004, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710707, -1.8495091e-16, -0.70710707, 7.4345246e-17)
+            quatf physics:localRot1 = (0.70710707, -1.2550444e-16, -0.70710707, 1.0406849e-16)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 89.99998
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsFixedJoint "R_right_forearm_thumb_base"
+        {
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_palm>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_thumb_base>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (-0.004, -0.0272638, 0.0199825)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-3.1262e-16, -0.7071068, 1.4449e-16, 0.7071068)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsRevoluteJoint "R_t0_TM_abd" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_thumb_base>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_thumb_trap>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (-0.0035941154, 0.012241602, -0.0140000135)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.57357657, 3.7252903e-9, 0, -0.81915224)
+            quatf physics:localRot1 = (0.70710695, 0, -0.70710695, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 119.999985
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsRevoluteJoint "R_t1_TM" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_thumb_trap>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_thumb_meta>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, -0.009999998, 0.0009999871)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710707, -0.707107, 0, 0)
+            quatf physics:localRot1 = (0.70710707, 0, -0.70710707, 0)
+            float physics:lowerLimit = -30
+            float physics:upperLimit = 60.000027
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsRevoluteJoint "R_t2_MCP" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_thumb_meta>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_thumb_prox>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0.025000006, 0, 1.4901161e-8)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.56098574, -0.43045947, -0.43045944, -0.5609858)
+            quatf physics:localRot1 = (0.7071071, 0, -0.70710707, -1.4901161e-8)
+            float physics:lowerLimit = -19.999996
+            float physics:upperLimit = 89.99998
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+
+        def PhysicsRevoluteJoint "R_t3_DIP" (
+            prepend apiSchemas = ["PhysxJointAPI", "PhysxLimitAPI:X", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 1
+            float drive:angular:physics:maxForce = 1
+            float drive:angular:physics:stiffness = 10
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_thumb_prox>
+            rel physics:body1 = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified/R_right_forearm_chs/R_right_forearm_thumb_dist>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0.03200002, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.7071071, 0, -0.70710707, -1.4901161e-8)
+            quatf physics:localRot1 = (0.7071071, 0, -0.70710707, -1.4901161e-8)
+            float physics:lowerLimit = -19.999996
+            float physics:upperLimit = 89.99998
+            float physxJoint:armature = 0
+            float physxLimit:X:damping = 0
+            float physxLimit:X:stiffness = 0
+        }
+    }
+
+    over "worldBody" (
+        delete apiSchemas = ["PhysicsArticulationRootAPI", "PhysicsRigidBodyAPI"]
+        prepend apiSchemas = ["PhysxArticulationAPI"]
+    )
+    {
+        bool physxArticulation:enabledSelfCollisions = 0
+    }
+}
+
+def PhysicsScene "physicsScene" (
+    prepend apiSchemas = ["PhysxSceneAPI"]
+)
+{
+    vector3f physics:gravityDirection = (0, 0, -1)
+    float physics:gravityMagnitude = 9.81
+    uniform token physxScene:broadphaseType = "MBP"
+    bool physxScene:enableCCD = 1
+    bool physxScene:enableGPUDynamics = 0
+    bool physxScene:enableStabilization = 1
+    uniform token physxScene:solverType = "TGS"
+}
+
+def Scope "collisions"
+{
+    def PhysicsCollisionGroup "robotCollisionGroup"
+    {
+        prepend rel collection:colliders:includes = </ASY__RIGHT_HAND_GEN1D_ON_FOREARM_GEN1D_convex_smol_unified>
+    }
+
+    def PhysicsCollisionGroup "collidersCollisionGroup"
+    {
+        prepend rel collection:colliders:includes = </collisions>
+        prepend rel physics:filteredGroups = </collisions/robotCollisionGroup>
+    }
+
+    def Xform "R_right_forearm_chs"
+    {
+        over "gen_1_D_R_convex_smol_chs"
+        {
+            over "gen_1_D_R_convex_smol_chs" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_bottom_virtual_cover1"
+    {
+        over "gen_1_D_R_convex_smol_bottom_virtual_cover1"
+        {
+            over "gen_1_D_R_convex_smol_bottom_virtual_cover1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_cover1"
+    {
+        over "gen_1_D_R_convex_smol_virtual_cover1"
+        {
+            over "gen_1_D_R_convex_smol_virtual_cover1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_wrist_base"
+    {
+        over "gen_1_D_R_convex_smol_wrist_base"
+        {
+            over "gen_1_D_R_convex_smol_wrist_base" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_wrist_ujoint"
+    {
+        over "gen_1_D_R_convex_smol_wrist_ujoint"
+        {
+            over "gen_1_D_R_convex_smol_wrist_ujoint" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_palm"
+    {
+        over "gen_1_D_R_convex_smol_palm"
+        {
+            over "gen_1_D_R_convex_smol_palm" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_gen1d01_meta"
+    {
+        over "gen_1_D_R_convex_smol_gen1d01_meta"
+        {
+            over "gen_1_D_R_convex_smol_gen1d01_meta" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_gen1d01_prox"
+    {
+        over "gen_1_D_R_convex_smol_gen1d01_prox"
+        {
+            over "gen_1_D_R_convex_smol_gen1d01_prox" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_gen1d01_med"
+    {
+        over "gen_1_D_R_convex_smol_gen1d01_med"
+        {
+            over "gen_1_D_R_convex_smol_gen1d01_med" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_gen1d01_dist"
+    {
+        over "gen_1_D_R_convex_smol_gen1d01_dist"
+        {
+            over "gen_1_D_R_convex_smol_gen1d01_dist" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_gen1d02_meta"
+    {
+        over "gen_1_D_R_convex_smol_gen1d02_meta"
+        {
+            over "gen_1_D_R_convex_smol_gen1d02_meta" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_gen1d02_prox"
+    {
+        over "gen_1_D_R_convex_smol_gen1d02_prox"
+        {
+            over "gen_1_D_R_convex_smol_gen1d02_prox" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_gen1d02_med"
+    {
+        over "gen_1_D_R_convex_smol_gen1d02_med"
+        {
+            over "gen_1_D_R_convex_smol_gen1d02_med" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_gen1d02_dist"
+    {
+        over "gen_1_D_R_convex_smol_gen1d02_dist"
+        {
+            over "gen_1_D_R_convex_smol_gen1d02_dist" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_gen1d03_meta"
+    {
+        over "gen_1_D_R_convex_smol_gen1d03_meta"
+        {
+            over "gen_1_D_R_convex_smol_gen1d03_meta" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_gen1d03_prox"
+    {
+        over "gen_1_D_R_convex_smol_gen1d03_prox"
+        {
+            over "gen_1_D_R_convex_smol_gen1d03_prox" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_gen1d03_med"
+    {
+        over "gen_1_D_R_convex_smol_gen1d03_med"
+        {
+            over "gen_1_D_R_convex_smol_gen1d03_med" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_gen1d03_dist"
+    {
+        over "gen_1_D_R_convex_smol_gen1d03_dist"
+        {
+            over "gen_1_D_R_convex_smol_gen1d03_dist" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_pinky_meta"
+    {
+        over "gen_1_D_R_convex_smol_pinky_meta"
+        {
+            over "gen_1_D_R_convex_smol_pinky_meta" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_pinky_prox"
+    {
+        over "gen_1_D_R_convex_smol_pinky_prox"
+        {
+            over "gen_1_D_R_convex_smol_pinky_prox" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_pinky_med"
+    {
+        over "gen_1_D_R_convex_smol_pinky_med"
+        {
+            over "gen_1_D_R_convex_smol_pinky_med" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_pinky_dist"
+    {
+        over "gen_1_D_R_convex_smol_pinky_dist"
+        {
+            over "gen_1_D_R_convex_smol_pinky_dist" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_thumb_base"
+    {
+        over "gen_1_D_R_convex_smol_thumb_base"
+        {
+            over "gen_1_D_R_convex_smol_thumb_base" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_thumb_trap"
+    {
+        over "gen_1_D_R_convex_smol_thumb_trap"
+        {
+            over "gen_1_D_R_convex_smol_thumb_trap" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_thumb_meta"
+    {
+        over "gen_1_D_R_convex_smol_thumb_meta"
+        {
+            over "gen_1_D_R_convex_smol_thumb_meta" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_thumb_prox"
+    {
+        over "gen_1_D_R_convex_smol_thumb_prox"
+        {
+            over "gen_1_D_R_convex_smol_thumb_prox" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+
+    def Xform "R_right_forearm_thumb_dist"
+    {
+        over "gen_1_D_R_convex_smol_thumb_dist"
+        {
+            over "gen_1_D_R_convex_smol_thumb_dist" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+}
+
