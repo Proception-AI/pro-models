@@ -9,6 +9,10 @@ your hardware and clone that branch.
 | ProHand Gen1 (Gen1.D) | `release/gen1` | MJCF, URDF, USD | maintenance |
 | ProHand Gen2 Power | `release/gen2` | MJCF, URDF | current |
 
+| ProHand Gen1 (Gen1.D) | ProHand Gen2 Power |
+| :---: | :---: |
+| ![ProHand Gen1](media/gen1.png) | ![ProHand Gen2 Power](media/gen2.png) |
+
 The SDK for each line is in [prohand-sdk](https://github.com/Proception-AI/prohand-sdk)
 on the branch with the same name.
 
