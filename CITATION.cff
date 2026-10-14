@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this model, please cite it as below."
+authors:
+- family-names: "Xu"
+  given-names: "Jianxiang"
+  affiliation: Proception Inc.
+  orcid: "https://orcid.org/0000-0001-8391-0971"
+- family-names: "Sombolestan"
+  given-names: "Mohsen"
+  affiliation: Proception Inc.
+  orcid: "https://orcid.org/0000-0002-7557-3036"
+- name: etc.  # Replace or expand with additional authors
+title: "Pro-Models: Proception Inc. Simulation Models for MuJoCo"
+version: 1.A.0
+date-released: 2025-07-31
+url: "https://github.com/Proception-AI/pro-models"
