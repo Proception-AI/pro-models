@@ -11,6 +11,6 @@ authors:
   orcid: "https://orcid.org/0000-0002-7557-3036"
 - name: etc.  # Replace or expand with additional authors
 title: "Pro-Models: Proception Inc. Simulation Models for MuJoCo"
-version: 1.A.0
-date-released: 2025-07-31
+version: 2.0.0
+date-released: 2026-10-13
 url: "https://github.com/Proception-AI/pro-models"

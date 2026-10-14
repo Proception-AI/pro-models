@@ -1,9 +1,6 @@
 default:
     @just --list
 
-# ==============================================================================
-# TEST MODELS UPLOADED TO (INTERNAL/PRIVATE) "modules/models"
-# ==============================================================================
 run_mjcf_py := if os() == "macos" { "mjpython" } else { "python3" }
 
 mjcf:

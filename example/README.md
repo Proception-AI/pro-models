@@ -9,8 +9,8 @@ A simple MuJoCo viewer for ProHand models.
 From the repository root:
 
 ```bash
-just show_left_hand     # ProHand 1D (left)
-just show_right_hand    # ProHand 1D (right)
+just show_left_hand     # ProHand Gen2 Power (left)
+just show_right_hand    # ProHand Gen2 Power (right)
 just show_both_hands    # Both hands
 ```
 
@@ -37,8 +37,8 @@ mjpython hand_viewer.py {left|right|both}
 
 | File | Description |
 | --- | --- |
-| `scenes/left_hand_scene.xml`  | ProHand 1D left hand |
-| `scenes/right_hand_scene.xml` | ProHand 1D right hand |
+| `scenes/left_hand_scene.xml`  | ProHand Gen2 Power left hand |
+| `scenes/right_hand_scene.xml` | ProHand Gen2 Power right hand |
 | `scenes/both_hands_scene.xml` | Both hands together |
 | `scenes/common_scene.xml`     | Shared lighting / ground plane include |
 

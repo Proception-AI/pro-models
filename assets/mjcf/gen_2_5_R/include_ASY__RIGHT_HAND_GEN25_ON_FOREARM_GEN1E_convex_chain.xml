@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujocoinclude model="ASY__RIGHT_HAND_GEN25_ON_FOREARM_GEN1E" name="ASY__RIGHT_HAND_GEN25_ON_FOREARM_GEN1E">
+    <!--
+    (c) 2025-2026 Proception Inc. All rights reserved.
+    Licensed under the BSD 3-Clause License (full terms below); mesh geometry is licensed separately.
+
+    BSD 3-Clause License
+
+    Copyright (c) 2025-2026, Proception Inc.
+
+    This license applies to this model file only. Mesh geometry (mesh files
+    and any mesh geometry embedded in this file) is proprietary to Proception
+    Inc. and licensed separately under the mesh geometry license terms.
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are met:
+
+    1. Redistributions of source code must retain the above copyright notice,
+       this list of conditions and the following disclaimer.
+
+    2. Redistributions in binary form must reproduce the above copyright
+       notice, this list of conditions and the following disclaimer in the
+       documentation and/or other materials provided with the distribution.
+
+    3. Neither the name of the copyright holder nor the names of its
+       contributors may be used to endorse or promote products derived from
+       this software without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+    TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+    PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+    CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+    EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+    LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+    For licensing inquiries, contact Proception Inc. at contact@proception.ai.
+-->
+    <body name="R_right_forearm_gen1e" pos="0.0000000 0.0000000 0.0000000" quat="5e-01 5e-01 5e-01 5e-01">
+        <body name="R_right_forearm_wrist_base" pos="0.0000000 0.2132000 0.0154500" quat="1e+00 1.388e-17 0e+00 -4.163e-17">
+            <inertial mass="0.0249763" pos="0.0000046 0.0061671 0.0004368" diaginertia="5.728056e-06 1.163974e-05 7.998322e-06" />
+            <geom name="R_right_forearm_wrist_base/visual" class="visual" mesh="gen_2_5_R/optimized/wrist_base" />
+            <geom name="R_right_forearm_wrist_base/collision" class="collision" mesh="gen_2_5_R/convex/wrist_base" contype="511" conaffinity="2304" />
+            <body name="R_right_forearm_wrist_ujoint" pos="-0.0000000 0.0200000 -0.0000000" quat="-0e+00 7.071068e-01 7.071068e-01 -9.81e-18">
+                <inertial mass="0.0512518" pos="0.0124664 0.0000000 -0.0032079" diaginertia="1.237338e-05 6.708757e-06 1.103105e-05" />
+                <geom name="R_right_forearm_wrist_ujoint/visual" class="visual" mesh="gen_2_5_R/optimized/wrist_ujoint" />
+                <geom name="R_right_forearm_wrist_ujoint/collision" class="collision" mesh="gen_2_5_R/convex/wrist_ujoint" contype="767" conaffinity="3584" />
+                <joint name="R_wrist_abd" axis="0 0 1" pos="0 0 0" range="-5.235988e-01 5.235988e-01" limited="true" damping="0.0687" />
+                <body name="R_right_forearm_palm" pos="0.0180000 -0.0000000 -0.0050000" quat="5e-01 -5e-01 5e-01 5e-01">
+                    <inertial mass="0.1403572" pos="0.0002414 -0.0412936 -0.0072860" diaginertia="1.482112e-04 6.445074e-05 9.864763e-05" />
+                    <geom name="R_right_forearm_palm/visual" class="visual" mesh="gen_2_5_R/optimized/palm" />
+                    <geom name="R_right_forearm_palm/collision" class="collision" mesh="gen_2_5_R/convex/palm" contype="1279" conaffinity="1536" />
+                    <joint name="R_wrist_flex" axis="0 0 1" pos="0 0 0" range="-6.108652e-01 1.134464e+00" limited="true" damping="0.0672" />
+                    <body name="R_right_forearm_thumb_trap" pos="0.0043000 -0.0369773 0.0253272" quat="6.743797e-01 -2.126311e-01 -2.126311e-01 -6.743797e-01">
+                        <inertial mass="0.0190922" pos="0.0057279 0.0000303 -0.0013411" diaginertia="2.817469e-06 2.601721e-06 1.266938e-06" />
+                        <geom name="R_right_forearm_thumb_trap/visual" class="visual" mesh="gen_2_5_R/optimized/thumb_trap" />
+                        <geom name="R_right_forearm_thumb_trap/collision" class="collision" mesh="gen_2_5_R/convex/thumb_trap" />
+                        <joint name="R_t0_TM_abd" axis="0 0 1" pos="0 0 0" range="0e+00 1.570796e+00" limited="true" damping="0.00223" armature="0.00111" />
+                        <body name="R_right_forearm_thumb_meta" pos="0.0100000 -0.0000000 -0.0037500" quat="8.8534e-16 2.2873e-16 7.071068e-01 7.071068e-01">
+                            <inertial mass="0.0127651" pos="-0.0094624 0.0015514 -0.0001519" diaginertia="8.539179e-07 1.585212e-06 1.177911e-06" />
+                            <geom name="R_right_forearm_thumb_meta/visual" class="visual" mesh="gen_2_5_R/optimized/thumb_meta" />
+                            <geom name="R_right_forearm_thumb_meta/collision" class="collision" mesh="gen_2_5_R/convex/thumb_meta" contype="2303" conaffinity="2816" />
+                            <joint name="R_t1_TM" axis="0 0 1" pos="0 0 0" range="-3.490658e-01 6.981317e-01" limited="true" damping="0.00155" armature="0.000773" />
+                            <body name="R_right_forearm_thumb_prox" pos="-0.0250000 -0.0000000 0.0000000" quat="6.830127e-01 -1.830127e-01 -1.830127e-01 -6.830127e-01">
+                                <inertial mass="0.0140123" pos="0.0035743 -0.0130176 0.0000149" diaginertia="1.51153e-06 7.430788e-07 1.551001e-06" />
+                                <geom name="R_right_forearm_thumb_prox/visual" class="visual" mesh="gen_2_5_R/optimized/thumb_prox" />
+                                <geom name="R_right_forearm_thumb_prox/collision" class="collision" mesh="gen_2_5_R/convex/thumb_prox" />
+                                <joint name="R_t2_MCP" axis="0 0 1" pos="0 0 0" range="-5.235988e-01 1.22173e+00" limited="true" damping="0.000523" armature="0.000262" />
+                                <body name="R_right_forearm_thumb_dist" pos="0.0042870 -0.0320000 -0.0000000" quat="-2.725e-17 -1.44329e-15 -8.737e-17 1e+00">
+                                    <inertial mass="0.0110928" pos="-0.0009379 0.0113835 -0.0001563" diaginertia="9.546085e-07 4.817267e-07 8.781411e-07" />
+                                    <geom name="R_right_forearm_thumb_dist/visual" class="visual" mesh="gen_2_5_R/optimized/thumb_dist" />
+                                    <geom name="R_right_forearm_thumb_dist/collision" class="collision" mesh="gen_2_5_R/convex/thumb_dist" />
+                                    <site name="R_thumb_tip_site" pos="0.0007025 0.0282986 -0.0001664" class="site/keypoint" />
+                                    <joint name="R_t3_DIP" axis="0 0 1" pos="0 0 0" range="-7.853982e-01 3.490658e-01" limited="true" damping="4.65e-05" armature="2.33e-05" />
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                    <body name="R_right_forearm_gen2611_meta" pos="0.0022300 -0.0879352 0.0122844" quat="2.1311e-16 7.071068e-01 -4.4701e-16 -7.071068e-01">
+                        <inertial mass="0.0081566" pos="-0.0000001 0.0027145 0.0001353" diaginertia="4.993902e-07 4.370848e-07 3.264618e-07" />
+                        <geom name="R_right_forearm_gen2611_meta/visual" class="visual" mesh="gen_2_5_R/optimized/gen2611_meta" />
+                        <geom name="R_right_forearm_gen2611_meta/collision" class="collision" mesh="gen_2_5_R/convex/gen2611_meta" />
+                        <joint name="R_i0_CMC_abd" axis="0 0 1" pos="0 0 0" range="-4.363323e-01 4.363323e-01" limited="true" damping="0.00175" armature="0.000875" />
+                        <body name="R_right_forearm_gen2611_prox" pos="-0.0000000 0.0070000 0.0010000" quat="1.7563e-16 7.071068e-01 1.1305e-16 -7.071068e-01">
+                            <inertial mass="0.0161274" pos="0.0017607 -0.0233926 -0.0002057" diaginertia="2.963725e-06 8.767823e-07 2.73893e-06" />
+                            <geom name="R_right_forearm_gen2611_prox/visual" class="visual" mesh="gen_2_5_R/optimized/gen2611_prox" />
+                            <geom name="R_right_forearm_gen2611_prox/collision" class="collision" mesh="gen_2_5_R/convex/gen2611_prox" contype="2303" conaffinity="2816" />
+                            <joint name="R_i1_MCP" axis="0 0 1" pos="0 0 0" range="-2.617994e-01 1.570796e+00" limited="true" damping="0.00137" armature="0.000687" />
+                            <body name="R_right_forearm_gen2611_med" pos="0.0048480 -0.0420000 0.0000000" quat="1e+00 5.914e-17 -4.7184e-16 -2.852e-17">
+                                <inertial mass="0.0057096" pos="-0.0011968 -0.0094978 -0.0002402" diaginertia="3.542563e-07 2.657298e-07 2.572144e-07" />
+                                <geom name="R_right_forearm_gen2611_med/visual" class="visual" mesh="gen_2_5_R/optimized/gen2611_med" />
+                                <geom name="R_right_forearm_gen2611_med/collision" class="collision" mesh="gen_2_5_R/convex/gen2611_med" />
+                                <joint name="R_i2_PIP" axis="0 0 1" pos="0 0 0" range="-7.853982e-01 1.570796e+00" limited="true" damping="0.000184" armature="9.2e-05" />
+                                <body name="R_right_forearm_gen2611_dist" pos="-0.0000000 -0.0200000 -0.0000000" quat="1e+00 1.2843e-16 4.7184e-16 2.506e-17">
+                                    <inertial mass="0.0072622" pos="0.0016138 -0.0129989 -0.0003114" diaginertia="5.132707e-07 2.484243e-07 4.933051e-07" />
+                                    <geom name="R_right_forearm_gen2611_dist/visual" class="visual" mesh="gen_2_5_R/optimized/gen2611_dist" />
+                                    <geom name="R_right_forearm_gen2611_dist/collision" class="collision" mesh="gen_2_5_R/convex/gen2611_dist" />
+                                    <site name="R_index_tip_site" pos="0.0023044 -0.0277505 -0.0003882" class="site/keypoint" />
+                                    <joint name="R_i3_DIP" axis="0 0 1" pos="0 0 0" range="0e+00 1.570796e+00" limited="true" damping="3.48e-05" armature="1.74e-05" />
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                    <body name="R_right_forearm_gen2612_meta" pos="0.0022300 -0.0921593 -0.0105882" quat="2.1311e-16 7.071068e-01 -4.4701e-16 -7.071068e-01">
+                        <inertial mass="0.0081566" pos="0.0007025 0.0026220 0.0001353" diaginertia="4.952149e-07 4.412602e-07 3.264618e-07" />
+                        <geom name="R_right_forearm_gen2612_meta/visual" class="visual" mesh="gen_2_5_R/optimized/gen2612_meta" />
+                        <geom name="R_right_forearm_gen2612_meta/collision" class="collision" mesh="gen_2_5_R/convex/gen2612_meta" />
+                        <joint name="R_m0_CMC_abd" axis="0 0 1" pos="0 0 0" range="-2.617994e-01 2.617994e-01" limited="true" damping="0.00175" armature="0.000875" />
+                        <body name="R_right_forearm_gen2612_prox" pos="0.0018117 0.0067615 0.0010000" quat="-9.229596e-02 7.010574e-01 -9.229596e-02 -7.010574e-01">
+                            <inertial mass="0.0161274" pos="0.0017607 -0.0233926 -0.0002057" diaginertia="2.963725e-06 8.767823e-07 2.73893e-06" />
+                            <geom name="R_right_forearm_gen2612_prox/visual" class="visual" mesh="gen_2_5_R/optimized/gen2612_prox" />
+                            <geom name="R_right_forearm_gen2612_prox/collision" class="collision" mesh="gen_2_5_R/convex/gen2612_prox" contype="2303" conaffinity="2816" />
+                            <joint name="R_m1_MCP" axis="0 0 1" pos="0 0 0" range="-2.617994e-01 1.570796e+00" limited="true" damping="0.00137" armature="0.000687" />
+                            <body name="R_right_forearm_gen2612_med" pos="0.0048480 -0.0420000 0.0000000" quat="1e+00 5.551e-17 -4.7184e-16 -2.852e-17">
+                                <inertial mass="0.0057096" pos="-0.0011968 -0.0094978 -0.0002402" diaginertia="3.542563e-07 2.657298e-07 2.572144e-07" />
+                                <geom name="R_right_forearm_gen2612_med/visual" class="visual" mesh="gen_2_5_R/optimized/gen2612_med" />
+                                <geom name="R_right_forearm_gen2612_med/collision" class="collision" mesh="gen_2_5_R/convex/gen2612_med" />
+                                <joint name="R_m2_PIP" axis="0 0 1" pos="0 0 0" range="-7.853982e-01 1.570796e+00" limited="true" damping="0.000184" armature="9.2e-05" />
+                                <body name="R_right_forearm_gen2612_dist" pos="-0.0000000 -0.0200000 -0.0000000" quat="1e+00 1.3878e-16 4.7184e-16 2.506e-17">
+                                    <inertial mass="0.0072622" pos="0.0016138 -0.0129989 -0.0003114" diaginertia="5.132707e-07 2.484243e-07 4.933051e-07" />
+                                    <geom name="R_right_forearm_gen2612_dist/visual" class="visual" mesh="gen_2_5_R/optimized/gen2612_dist" />
+                                    <geom name="R_right_forearm_gen2612_dist/collision" class="collision" mesh="gen_2_5_R/convex/gen2612_dist" />
+                                    <site name="R_middle_tip_site" pos="0.0023044 -0.0277505 -0.0003882" class="site/keypoint" />
+                                    <joint name="R_m3_DIP" axis="0 0 1" pos="0 0 0" range="0e+00 1.570796e+00" limited="true" damping="3.48e-05" armature="1.74e-05" />
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                    <body name="R_right_forearm_meta" pos="0.0022300 -0.0770648 -0.0282844" quat="2.1311e-16 7.071068e-01 -4.4701e-16 -7.071068e-01">
+                        <inertial mass="0.0081566" pos="0.0013572 0.0023509 0.0001353" diaginertia="4.838109e-07 4.526641e-07 3.264618e-07" />
+                        <geom name="R_right_forearm_meta/visual" class="visual" mesh="gen_2_5_R/optimized/gen2613_meta" />
+                        <geom name="R_right_forearm_meta/collision" class="collision" mesh="gen_2_5_R/convex/gen2613_meta" />
+                        <joint name="R_r0_CMC_abd" axis="0 0 1" pos="0 0 0" range="-2.617994e-01 2.617994e-01" limited="true" damping="0.00175" armature="0.000875" />
+                        <body name="R_right_forearm_prox" pos="0.0035000 0.0060622 0.0010000" quat="-1.830127e-01 6.830127e-01 -1.830127e-01 -6.830127e-01">
+                            <inertial mass="0.0161274" pos="0.0017607 -0.0233926 -0.0002057" diaginertia="2.963725e-06 8.767823e-07 2.73893e-06" />
+                            <geom name="R_right_forearm_prox/visual" class="visual" mesh="gen_2_5_R/optimized/gen2613_prox" />
+                            <geom name="R_right_forearm_prox/collision" class="collision" mesh="gen_2_5_R/convex/gen2613_prox" contype="2303" conaffinity="2816" />
+                            <joint name="R_r1_MCP" axis="0 0 1" pos="0 0 0" range="-2.617994e-01 1.570796e+00" limited="true" damping="0.00137" armature="0.000687" />
+                            <body name="R_right_forearm_med" pos="0.0048480 -0.0420000 0.0000000" quat="1e+00 8.327e-17 -4.7184e-16 -2.852e-17">
+                                <inertial mass="0.0057096" pos="-0.0011968 -0.0094978 -0.0002402" diaginertia="3.542563e-07 2.657298e-07 2.572144e-07" />
+                                <geom name="R_right_forearm_med/visual" class="visual" mesh="gen_2_5_R/optimized/gen2613_med" />
+                                <geom name="R_right_forearm_med/collision" class="collision" mesh="gen_2_5_R/convex/gen2613_med" />
+                                <joint name="R_r2_PIP" axis="0 0 1" pos="0 0 0" range="-7.853982e-01 1.570796e+00" limited="true" damping="0.000184" armature="9.2e-05" />
+                                <body name="R_right_forearm_dist" pos="-0.0000000 -0.0200000 -0.0000000" quat="1e+00 1.1102e-16 4.7184e-16 2.506e-17">
+                                    <inertial mass="0.0072622" pos="0.0016138 -0.0129989 -0.0003114" diaginertia="5.132707e-07 2.484243e-07 4.933051e-07" />
+                                    <geom name="R_right_forearm_dist/visual" class="visual" mesh="gen_2_5_R/optimized/gen2613_dist" />
+                                    <geom name="R_right_forearm_dist/collision" class="collision" mesh="gen_2_5_R/convex/gen2613_dist" />
+                                    <site name="R_ring_tip_site" pos="0.0023044 -0.0277505 -0.0003882" class="site/keypoint" />
+                                    <joint name="R_r3_DIP" axis="0 0 1" pos="0 0 0" range="0e+00 1.570796e+00" limited="true" damping="3.48e-05" armature="1.74e-05" />
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                    <body name="R_right_forearm_pinky_meta" pos="0.0022300 -0.0629363 -0.0462395" quat="2.1311e-16 7.071068e-01 -4.4701e-16 -7.071068e-01">
+                        <inertial mass="0.0081566" pos="0.0022235 0.0015570 0.0001353" diaginertia="4.575795e-07 4.788956e-07 3.264618e-07" />
+                        <geom name="R_right_forearm_pinky_meta/visual" class="visual" mesh="gen_2_5_R/optimized/pinky_meta" />
+                        <geom name="R_right_forearm_pinky_meta/collision" class="collision" mesh="gen_2_5_R/convex/pinky_meta" />
+                        <joint name="R_p0_CMC_abd" axis="0 0 1" pos="0 0 0" range="-4.363323e-01 4.363323e-01" limited="true" damping="0.000609" armature="0.000305" />
+                        <body name="R_right_forearm_pinky_prox" pos="0.0057341 0.0040150 0.0010000" quat="3.265056e-01 -6.272114e-01 3.265056e-01 6.272114e-01">
+                            <inertial mass="0.0119469" pos="0.0020081 -0.0179283 0.0000081" diaginertia="1.520674e-06 6.464841e-07 1.412867e-06" />
+                            <geom name="R_right_forearm_pinky_prox/visual" class="visual" mesh="gen_2_5_R/optimized/pinky_prox" />
+                            <geom name="R_right_forearm_pinky_prox/collision" class="collision" mesh="gen_2_5_R/convex/pinky_prox" contype="2303" conaffinity="2816" />
+                            <joint name="R_p1_MCP" axis="0 0 1" pos="0 0 0" range="-2.617994e-01 1.570796e+00" limited="true" damping="0.000433" armature="0.000216" />
+                            <body name="R_right_forearm_pinky_med" pos="0.0048480 -0.0320000 -0.0000000" quat="1e+00 -1.1102e-16 1.6653e-16 -6.636e-17">
+                                <inertial mass="0.0047319" pos="-0.0012217 -0.0094148 0.0000096" diaginertia="2.702603e-07 2.029646e-07 2.320773e-07" />
+                                <geom name="R_right_forearm_pinky_med/visual" class="visual" mesh="gen_2_5_R/optimized/pinky_med" />
+                                <geom name="R_right_forearm_pinky_med/collision" class="collision" mesh="gen_2_5_R/convex/pinky_med" />
+                                <joint name="R_p2_PIP" axis="0 0 1" pos="0 0 0" range="-7.853982e-01 1.570796e+00" limited="true" damping="5.24e-05" armature="2.62e-05" />
+                                <body name="R_right_forearm_pinky_dist" pos="-0.0000000 -0.0200000 0.0000000" quat="1e+00 1.3878e-16 3.0531e-16 -6.895e-17">
+                                    <inertial mass="0.0020185" pos="-0.0013338 -0.0100329 0.0000086" diaginertia="1.394342e-07 2.408746e-08 1.351094e-07" />
+                                    <geom name="R_right_forearm_pinky_dist/visual" class="visual" mesh="gen_2_5_R/optimized/pinky_dist" />
+                                    <geom name="R_right_forearm_pinky_dist/collision" class="collision" mesh="gen_2_5_R/convex/pinky_dist" />
+                                    <site name="R_pinky_tip_site" pos="0.0024258 -0.0274734 0.0000163" class="site/keypoint" />
+                                    <joint name="R_p3_DIP" axis="0 0 1" pos="0 0 0" range="0e+00 1.570796e+00" limited="true" damping="6.84e-06" armature="3.42e-06" />
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+        <body name="R_right_forearm_gen1e1" pos="0.0000000 0.0000000 0.0000000" quat="1e+00 0e+00 0e+00 0e+00">
+            <inertial mass="2.4019292" pos="-0.0000204 0.1035580 0.0167831" diaginertia="1.084447e-02 2.85874e-03 1.072695e-02" />
+            <geom name="R_right_forearm_gen1e1/visual" class="visual" mesh="gen_2_5_R/optimized/gen1e1" />
+            <geom name="R_right_forearm_gen1e1/collision" class="collision" mesh="gen_2_5_R/convex/gen1e1" contype="511" conaffinity="2304" />
+            <site name="R_right_forearm_gen1e1/mountpt_gen1forearm" pos="-0.0000000 -0.0020000 0.0200000" rgba="0 0.9 0.9 0.9" size="0.004" quat="5e-01 5e-01 -5e-01 5e-01" />
+            <camera name="R_wrist_camera" pos="0.0000900 0.2364449 0.0780302" quat="6.427876e-01 7.660444e-01 -4.66328e-15 -3.84969e-15" fovy="96" />
+            <site name="R_wrist_camera" class="site/keypoint" pos="0.0000900 0.2206880 0.0752518" quat="4.66328e-15 3.84969e-15 6.427876e-01 7.660444e-01" />
+        </body>
+    </body>
+</mujocoinclude>
