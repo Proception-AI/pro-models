@@ -139,7 +139,7 @@ derived products. The software is provided "as is", without warranty of any
 kind.
 
 We welcome research partnerships, commercial collaborations, and contributions.
-Reach out at 📧 **contact@proception.ai**.
+Reach out at 📧 **support@proception.ai**.
 
 ## Citation
 
