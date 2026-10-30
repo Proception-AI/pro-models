@@ -64,7 +64,7 @@
         <mesh name="gen_2_5_L/optimized/thumb_trap" file="gen_2_5_L/optimized/asy_left_hand_gen251_sim_thumb_gen2511_trapezium.obj" />
         <mesh name="gen_2_5_L/optimized/wrist_base" file="gen_2_5_L/optimized/asy_left_hand_gen251_sim_wrist_gen211_base.obj" />
         <mesh name="gen_2_5_L/optimized/wrist_ujoint" file="gen_2_5_L/optimized/asy_left_hand_gen251_sim_wrist_gen211_ujoint.obj" />
-        <mesh name="gen_2_5_L/optimized/gen1e1" file="gen_2_5_L/optimized/asy_sim_forearm_gen1e1.obj" />
+        <mesh name="gen_2_5_L/optimized/gen1e1" file="gen_2_5_L/optimized/left_forearm_gen1e1.obj" />
         <mesh name="gen_2_5_L/convex/gen2611_dist" file="gen_2_5_L/convex/asy_left_hand_gen251_sim_finger_gen2611_distal.obj" />
         <mesh name="gen_2_5_L/convex/gen2611_med" file="gen_2_5_L/convex/asy_left_hand_gen251_sim_finger_gen2611_medial.obj" />
         <mesh name="gen_2_5_L/convex/gen2611_meta" file="gen_2_5_L/convex/asy_left_hand_gen251_sim_finger_gen2611_metacarpal_gen261.obj" />
@@ -88,6 +88,6 @@
         <mesh name="gen_2_5_L/convex/thumb_trap" file="gen_2_5_L/convex/asy_left_hand_gen251_sim_thumb_gen2511_trapezium.obj" />
         <mesh name="gen_2_5_L/convex/wrist_base" file="gen_2_5_L/convex/asy_left_hand_gen251_sim_wrist_gen211_base.obj" />
         <mesh name="gen_2_5_L/convex/wrist_ujoint" file="gen_2_5_L/convex/asy_left_hand_gen251_sim_wrist_gen211_ujoint.obj" />
-        <mesh name="gen_2_5_L/convex/gen1e1" file="gen_2_5_L/convex/asy_sim_forearm_gen1e1.obj" />
+        <mesh name="gen_2_5_L/convex/gen1e1" file="gen_2_5_L/convex/left_forearm_gen1e1.obj" />
     </asset>
 </mujocoinclude>

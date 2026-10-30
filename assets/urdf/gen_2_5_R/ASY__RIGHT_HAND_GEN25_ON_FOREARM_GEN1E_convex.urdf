@@ -40,11 +40,11 @@
 
     For licensing inquiries, contact Proception Inc. at contact@proception.ai.
 -->
-    <!-- Base wrapper: re-orients the exported root [R_right_forearm_gen1e1] into the URDF world frame. -->
+    <!-- Base wrapper: re-orients the exported root [R_right_forearm_gen1e] into the URDF world frame. -->
     <link name="R_base" />
     <joint type="fixed" name="R_base_anchor">
         <parent link="R_base" />
-        <child link="R_right_forearm_gen1e1" />
+        <child link="R_right_forearm_gen1e" />
         <origin xyz="0.0000000 0.0000000 0.0000000" rpy="1.570796e+00 -0e+00 1.570796e+00" />
     </joint>
     <!-- Generated Body Links -->
@@ -442,12 +442,12 @@
     <link name="R_right_forearm_gen1e1">
         <visual name="R_gen1e1/visual">
             <geometry>
-                <mesh filename="gen_2_5_R/optimized/asy_sim_forearm_gen1e1.obj" />
+                <mesh filename="gen_2_5_R/optimized/right_forearm_gen1e1.obj" />
             </geometry>
         </visual>
         <collision name="R_gen1e1/collision">
             <geometry>
-                <mesh filename="gen_2_5_R/convex/asy_sim_forearm_gen1e1.obj" />
+                <mesh filename="gen_2_5_R/convex/right_forearm_gen1e1.obj" />
             </geometry>
         </collision>
         <inertial>
@@ -475,7 +475,7 @@
         <child link="R_right_forearm_palm" />
         <origin xyz="0.0180000 -0.0000000 -0.0050000" rpy="-1.570796e+00 1.570796e+00 0e+00" />
         <axis xyz="0 0 1" />
-        <limit lower="-6.108652e-01" upper="1.134464e+00" effort="0" velocity="0" />
+        <limit lower="-5.235988e-01" upper="1.134464e+00" effort="0" velocity="0" />
     </joint>
     <joint type="revolute" name="R_t0_TM_abd">
         <parent link="R_right_forearm_palm" />
@@ -616,5 +616,11 @@
         <origin xyz="-0.0000000 -0.0200000 0.0000000" rpy="2.7756e-16 6.1062e-16 -1.379e-16" />
         <axis xyz="0 0 1" />
         <limit lower="0e+00" upper="1.570796e+00" effort="0" velocity="0" />
+    </joint>
+    <link name="R_right_forearm_gen1e" />
+    <joint type="fixed" name="R_right_forearm_gen1e1/weld">
+        <parent link="R_right_forearm_gen1e" />
+        <child link="R_right_forearm_gen1e1" />
+        <origin xyz="0.0000000 0.0000000 0.0000000" rpy="0e+00 -0e+00 0e+00" />
     </joint>
 </robot>

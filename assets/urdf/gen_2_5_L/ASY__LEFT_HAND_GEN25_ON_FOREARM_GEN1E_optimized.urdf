@@ -40,11 +40,11 @@
 
     For licensing inquiries, contact Proception Inc. at contact@proception.ai.
 -->
-    <!-- Base wrapper: re-orients the exported root [L_left_forearm_gen1e1] into the URDF world frame. -->
+    <!-- Base wrapper: re-orients the exported root [L_left_forearm_gen1e] into the URDF world frame. -->
     <link name="L_base" />
     <joint type="fixed" name="L_base_anchor">
         <parent link="L_base" />
-        <child link="L_left_forearm_gen1e1" />
+        <child link="L_left_forearm_gen1e" />
         <origin xyz="0.0000000 0.0000000 0.0000000" rpy="1.570796e+00 -0e+00 1.570796e+00" />
     </joint>
     <!-- Generated Body Links -->
@@ -442,12 +442,12 @@
     <link name="L_left_forearm_gen1e1">
         <visual name="L_gen1e1/visual">
             <geometry>
-                <mesh filename="gen_2_5_L/optimized/asy_sim_forearm_gen1e1.obj" />
+                <mesh filename="gen_2_5_L/optimized/left_forearm_gen1e1.obj" />
             </geometry>
         </visual>
         <collision name="L_gen1e1/collision">
             <geometry>
-                <mesh filename="gen_2_5_L/optimized/asy_sim_forearm_gen1e1.obj" />
+                <mesh filename="gen_2_5_L/optimized/left_forearm_gen1e1.obj" />
             </geometry>
         </collision>
         <inertial>
@@ -616,5 +616,11 @@
         <origin xyz="-0.0000000 -0.0200000 0.0000000" rpy="1.9429e-16 6.1062e-16 -1.379e-16" />
         <axis xyz="0 0 1" />
         <limit lower="0e+00" upper="1.570796e+00" effort="0" velocity="0" />
+    </joint>
+    <link name="L_left_forearm_gen1e" />
+    <joint type="fixed" name="L_left_forearm_gen1e1/weld">
+        <parent link="L_left_forearm_gen1e" />
+        <child link="L_left_forearm_gen1e1" />
+        <origin xyz="0.0000000 0.0000000 0.0000000" rpy="0e+00 -0e+00 0e+00" />
     </joint>
 </robot>
