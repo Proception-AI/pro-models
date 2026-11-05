@@ -40,8 +40,15 @@
 
     For licensing inquiries, contact Proception Inc. at contact@proception.ai.
 -->
-    <body name="L_left_forearm_gen1e" pos="0.0000000 0.0000000 0.0000000" quat="5e-01 5e-01 5e-01 5e-01">
-        <body name="L_left_forearm_wrist_base" pos="0.0000000 0.2132000 0.0154500" quat="1e+00 -1.656e-17 2.01e-17 1.388e-17">
+    <body name="L_left_forearm_gen1e1" pos="0.0000000 0.0000000 0.0000000" quat="5e-01 5e-01 5e-01 5e-01">
+        <inertial mass="2.4019292" pos="-0.0000202 0.1033821 0.0167693" diaginertia="1.077218e-02 2.860097e-03 1.065339e-02" />
+        <geom name="L_left_forearm_gen1e1/visual" class="visual" mesh="gen_2_5_L/optimized/gen1e1" />
+        <geom name="L_left_forearm_gen1e1/collision/capsule" class="collision" type="capsule" size="0.061917331709023894 0.09122346244772792" pos="-0.000003 0.117327 0.024512" quat="0.720795 -0.693148 0.000086 0.000000" contype="511" conaffinity="2304" />
+        <!--Primitive collision: CapsulePrimitive - radius=0.0619, length=0.1824-->
+        <site name="L_left_forearm_gen1e1/mountpt_gen1forearm" pos="-0.0000000 -0.0020000 0.0200000" rgba="0 0.9 0.9 0.9" size="0.004" quat="5e-01 5e-01 -5e-01 5e-01" />
+        <camera name="L_wrist_camera" pos="0.0000900 0.2364449 0.0780302" quat="6.427876e-01 7.660444e-01 -4.66328e-15 -3.84969e-15" fovy="96" />
+        <site name="L_wrist_camera" class="site/keypoint" pos="0.0000900 0.2206880 0.0752518" quat="4.66328e-15 3.84969e-15 6.427876e-01 7.660444e-01" />
+        <body name="L_left_forearm_wrist_base" pos="0.0000000 0.2132000 0.0154500" quat="1e+00 0e+00 5.551e-17 -5.70377e-15">
             <inertial mass="0.0249763" pos="0.0000046 0.0061671 0.0004368" diaginertia="5.728056e-06 1.163974e-05 7.998322e-06" />
             <geom name="L_left_forearm_wrist_base/visual" class="visual" mesh="gen_2_5_L/optimized/wrist_base" />
             <geom name="L_left_forearm_wrist_base/collision" class="collision" mesh="gen_2_5_L/convex/wrist_base" contype="511" conaffinity="2304" />
@@ -61,19 +68,19 @@
                         <geom name="L_left_forearm_thumb_trap/collision/box" class="collision" type="box" size="0.011023 0.013284 0.019227" pos="0.006988 0.000013 0.001137" quat="0.999998 0.002069 0.000713 -0.000001" contype="8447" conaffinity="15872" />
                         <!--Primitive collision: BoxPrimitive - dimensions=[0.0220, 0.0266, 0.0385]-->
                         <joint name="L_t0_TM_abd" axis="0 0 1" pos="0 0 0" range="0e+00 1.570796e+00" limited="true" damping="0.00223" armature="0.00111" />
-                        <body name="L_left_forearm_thumb_meta" pos="0.0100000 0.0000000 0.0037500" quat="7.071068e-01 7.071068e-01 -5.4083e-16 1.37425e-15">
+                        <body name="L_left_forearm_thumb_meta" pos="0.0100000 0.0000000 0.0037500" quat="7.071068e-01 7.071068e-01 -5.4083e-16 1.39388e-15">
                             <inertial mass="0.0127652" pos="0.0094625 -0.0015513 0.0001518" diaginertia="8.53918e-07 1.585225e-06 1.177917e-06" />
                             <geom name="L_left_forearm_thumb_meta/visual" class="visual" mesh="gen_2_5_L/optimized/thumb_meta" />
                             <geom name="L_left_forearm_thumb_meta/collision/capsule" class="collision" type="capsule" size="0.012941153159269149 0.01170159670607077" pos="0.011761 -0.001395 0.000758" quat="0.686775 -0.067924 -0.723689 0.000000" contype="4351" conaffinity="14848" />
                             <!--Primitive collision: CapsulePrimitive - radius=0.0129, length=0.0234-->
                             <joint name="L_t1_TM" axis="0 0 1" pos="0 0 0" range="-3.490658e-01 6.981317e-01" limited="true" damping="0.00155" armature="0.000773" />
-                            <body name="L_left_forearm_thumb_prox" pos="0.0250000 0.0000000 -0.0000000" quat="6.830127e-01 -1.830127e-01 1.830127e-01 6.830127e-01">
+                            <body name="L_left_forearm_thumb_prox" pos="0.0250000 -0.0000000 -0.0000000" quat="6.830127e-01 -1.830127e-01 1.830127e-01 6.830127e-01">
                                 <inertial mass="0.0139900" pos="0.0035743 -0.0129825 -0.0002183" diaginertia="1.498819e-06 7.411507e-07 1.540135e-06" />
                                 <geom name="L_left_forearm_thumb_prox/visual" class="visual" mesh="gen_2_5_L/optimized/thumb_prox" />
-                                <geom name="L_left_forearm_thumb_prox/collision/capsule" class="collision" type="capsule" size="0.012292426714957266 0.011806865402736675" pos="0.003254 -0.014428 -0.000189" quat="0.705786 -0.708090 0.021804 0.000000" contype="8447" conaffinity="15872" />
+                                <geom name="L_left_forearm_thumb_prox/collision/capsule" class="collision" type="capsule" size="0.012292426574865345 0.011806867014205613" pos="0.003254 -0.014428 -0.000189" quat="0.705786 -0.708090 0.021804 0.000000" contype="8447" conaffinity="15872" />
                                 <!--Primitive collision: CapsulePrimitive - radius=0.0123, length=0.0236-->
                                 <joint name="L_t2_MCP" axis="0 0 1" pos="0 0 0" range="-5.235988e-01 1.22173e+00" limited="true" damping="0.000523" armature="0.000262" />
-                                <body name="L_left_forearm_thumb_dist" pos="0.0042870 -0.0320000 0.0000000" quat="10e-01 1.51e-17 -7.2164e-16 1.859e-17">
+                                <body name="L_left_forearm_thumb_dist" pos="0.0042870 -0.0320000 -0.0000000" quat="10e-01 1.22e-18 -7.2164e-16 1.859e-17">
                                     <inertial mass="0.0110928" pos="0.0009379 -0.0113835 -0.0000963" diaginertia="9.547768e-07 4.81895e-07 8.781411e-07" />
                                     <geom name="L_left_forearm_thumb_dist/visual" class="visual" mesh="gen_2_5_L/optimized/thumb_dist" />
                                     <geom name="L_left_forearm_thumb_dist/collision/capsule" class="collision" type="capsule" size="0.01136531976147095 0.012795907450984845" pos="0.001914 -0.012519 -0.000308" quat="0.706984 -0.705632 -0.047515 0.000000" contype="8447" conaffinity="15872" />
@@ -125,13 +132,13 @@
                             <geom name="L_left_forearm_gen2612_prox/collision/capsule" class="collision" type="capsule" size="0.012537052677191185 0.02169449309122404" pos="0.001299 -0.023184 -0.000383" quat="0.710846 -0.703258 -0.011239 0.000000" contype="2303" conaffinity="15104" />
                             <!--Primitive collision: CapsulePrimitive - radius=0.0125, length=0.0434-->
                             <joint name="L_m1_MCP" axis="0 0 1" pos="0 0 0" range="-2.617994e-01 1.570796e+00" limited="true" damping="0.00137" armature="0.000687" />
-                            <body name="L_left_forearm_gen2612_med" pos="0.0048480 -0.0420000 0.0000000" quat="1e+00 5.551e-17 -4.7184e-16 -2.852e-17">
+                            <body name="L_left_forearm_gen2612_med" pos="0.0048480 -0.0420000 0.0000000" quat="10e-01 5.551e-17 -4.7184e-16 -2.852e-17">
                                 <inertial mass="0.0057096" pos="-0.0011968 -0.0094978 -0.0002402" diaginertia="3.542563e-07 2.657298e-07 2.572144e-07" />
                                 <geom name="L_left_forearm_gen2612_med/visual" class="visual" mesh="gen_2_5_L/optimized/gen2612_med" />
                                 <geom name="L_left_forearm_gen2612_med/collision/capsule" class="collision" type="capsule" size="0.012093322473639718 0.010305036997016655" pos="-0.001055 -0.009333 -0.000125" quat="0.730632 -0.578334 -0.362914 0.000000" />
                                 <!--Primitive collision: CapsulePrimitive - radius=0.0121, length=0.0206-->
                                 <joint name="L_m2_PIP" axis="0 0 1" pos="0 0 0" range="-7.853982e-01 1.570796e+00" limited="true" damping="0.000184" armature="9.2e-05" />
-                                <body name="L_left_forearm_gen2612_dist" pos="-0.0000000 -0.0200000 0.0000000" quat="1e+00 1.249e-16 4.7184e-16 2.506e-17">
+                                <body name="L_left_forearm_gen2612_dist" pos="-0.0000000 -0.0200000 0.0000000" quat="10e-01 1.3878e-16 4.7184e-16 2.506e-17">
                                     <inertial mass="0.0072622" pos="0.0016138 -0.0129989 -0.0003114" diaginertia="5.132707e-07 2.484243e-07 4.933051e-07" />
                                     <geom name="L_left_forearm_gen2612_dist/visual" class="visual" mesh="gen_2_5_L/optimized/gen2612_dist" />
                                     <geom name="L_left_forearm_gen2612_dist/collision/capsule" class="collision" type="capsule" size="0.009977919798927768 0.008690546258872943" pos="0.002255 -0.012855 -0.000388" quat="0.707136 -0.699531 -0.103023 0.000000" />
@@ -154,13 +161,13 @@
                             <geom name="L_left_forearm_prox/collision/capsule" class="collision" type="capsule" size="0.012537052677191185 0.02169449309122404" pos="0.001299 -0.023184 -0.000383" quat="0.710846 -0.703258 -0.011239 0.000000" contype="2303" conaffinity="15104" />
                             <!--Primitive collision: CapsulePrimitive - radius=0.0125, length=0.0434-->
                             <joint name="L_r1_MCP" axis="0 0 1" pos="0 0 0" range="-2.617994e-01 1.570796e+00" limited="true" damping="0.00137" armature="0.000687" />
-                            <body name="L_left_forearm_med" pos="0.0048480 -0.0420000 0.0000000" quat="1e+00 5.551e-17 -4.7184e-16 -2.852e-17">
+                            <body name="L_left_forearm_med" pos="0.0048480 -0.0420000 0.0000000" quat="1e+00 8.327e-17 -4.7184e-16 -2.852e-17">
                                 <inertial mass="0.0057096" pos="-0.0011968 -0.0094978 -0.0002402" diaginertia="3.542563e-07 2.657298e-07 2.572144e-07" />
                                 <geom name="L_left_forearm_med/visual" class="visual" mesh="gen_2_5_L/optimized/gen2613_med" />
                                 <geom name="L_left_forearm_med/collision/capsule" class="collision" type="capsule" size="0.012093322473639718 0.010305036997016655" pos="-0.001055 -0.009333 -0.000125" quat="0.730632 -0.578334 -0.362914 0.000000" />
                                 <!--Primitive collision: CapsulePrimitive - radius=0.0121, length=0.0206-->
                                 <joint name="L_r2_PIP" axis="0 0 1" pos="0 0 0" range="-7.853982e-01 1.570796e+00" limited="true" damping="0.000184" armature="9.2e-05" />
-                                <body name="L_left_forearm_dist" pos="-0.0000000 -0.0200000 -0.0000000" quat="1e+00 1.3878e-16 4.7184e-16 2.506e-17">
+                                <body name="L_left_forearm_dist" pos="-0.0000000 -0.0200000 0.0000000" quat="1e+00 1.3878e-16 4.7184e-16 2.506e-17">
                                     <inertial mass="0.0072622" pos="0.0016138 -0.0129989 -0.0003114" diaginertia="5.132707e-07 2.484243e-07 4.933051e-07" />
                                     <geom name="L_left_forearm_dist/visual" class="visual" mesh="gen_2_5_L/optimized/gen2613_dist" />
                                     <geom name="L_left_forearm_dist/collision/capsule" class="collision" type="capsule" size="0.009977919798927768 0.008690546258872943" pos="0.002255 -0.012855 -0.000388" quat="0.707136 -0.699531 -0.103023 0.000000" />
@@ -172,24 +179,24 @@
                         </body>
                     </body>
                     <body name="L_left_forearm_pinky_meta" pos="0.0022300 -0.0629363 0.0462395" quat="-1.34628e-15 7.071068e-01 -1.19429e-15 7.071068e-01">
-                        <inertial mass="0.0081566" pos="0.0022236 0.0015569 -0.0001353" diaginertia="4.575859e-07 4.788892e-07 3.264618e-07" />
+                        <inertial mass="0.0081566" pos="0.0017449 0.0020794 -0.0001353" diaginertia="4.736505e-07 4.628246e-07 3.264618e-07" />
                         <geom name="L_left_forearm_pinky_meta/visual" class="visual" mesh="gen_2_5_L/optimized/pinky_meta" />
-                        <geom name="L_left_forearm_pinky_meta/collision/capsule" class="collision" type="capsule" size="0.012149432213550318 0.002213189520251413" pos="0.002540 0.001775 0.000267" quat="0.635152 -0.441674 0.633645 0.000000" />
-                        <!--Primitive collision: CapsulePrimitive - radius=0.0121, length=0.0044-->
+                        <geom name="L_left_forearm_pinky_meta/collision/capsule" class="collision" type="capsule" size="0.012241355484995142 0.004918023788787959" pos="0.001752 0.002261 0.000528" quat="0.669002 -0.496382 0.553210 0.000000" />
+                        <!--Primitive collision: CapsulePrimitive - radius=0.0122, length=0.0098-->
                         <joint name="L_p0_CMC_abd" axis="0 0 1" pos="0 0 0" range="-4.363323e-01 4.363323e-01" limited="true" damping="0.000609" armature="0.000305" />
-                        <body name="L_left_forearm_pinky_prox" pos="0.0057341 0.0040150 -0.0010000" quat="3.265056e-01 6.272114e-01 -3.265056e-01 6.272114e-01">
+                        <body name="L_left_forearm_pinky_prox" pos="0.0044995 0.0053623 -0.0010000" quat="2.418448e-01 6.64463e-01 -2.418448e-01 6.64463e-01">
                             <inertial mass="0.0119469" pos="0.0020081 -0.0179283 0.0000081" diaginertia="1.520674e-06 6.464841e-07 1.412867e-06" />
                             <geom name="L_left_forearm_pinky_prox/visual" class="visual" mesh="gen_2_5_L/optimized/pinky_prox" />
                             <geom name="L_left_forearm_pinky_prox/collision/capsule" class="collision" type="capsule" size="0.01239084090562017 0.012543400014146276" pos="0.002186 -0.015719 0.000026" quat="0.707315 -0.706475 -0.024465 0.000000" contype="2303" conaffinity="15104" />
                             <!--Primitive collision: CapsulePrimitive - radius=0.0124, length=0.0251-->
                             <joint name="L_p1_MCP" axis="0 0 1" pos="0 0 0" range="-2.617994e-01 1.570796e+00" limited="true" damping="0.000433" armature="0.000216" />
-                            <body name="L_left_forearm_pinky_med" pos="0.0048480 -0.0320000 -0.0000000" quat="10e-01 -5.551e-17 1.6653e-16 -6.636e-17">
+                            <body name="L_left_forearm_pinky_med" pos="0.0048480 -0.0320000 0.0000000" quat="1e+00 -5.551e-17 1.6653e-16 -6.636e-17">
                                 <inertial mass="0.0047319" pos="-0.0012217 -0.0094148 0.0000096" diaginertia="2.702603e-07 2.029646e-07 2.320773e-07" />
                                 <geom name="L_left_forearm_pinky_med/visual" class="visual" mesh="gen_2_5_L/optimized/pinky_med" />
                                 <geom name="L_left_forearm_pinky_med/collision/capsule" class="collision" type="capsule" size="0.010613823225436645 0.004622063469319981" pos="-0.001000 -0.009179 0.000087" quat="0.707068 -0.686310 -0.170393 0.000000" />
                                 <!--Primitive collision: CapsulePrimitive - radius=0.0106, length=0.0092-->
                                 <joint name="L_p2_PIP" axis="0 0 1" pos="0 0 0" range="-7.853982e-01 1.570796e+00" limited="true" damping="5.24e-05" armature="2.62e-05" />
-                                <body name="L_left_forearm_pinky_dist" pos="-0.0000000 -0.0200000 0.0000000" quat="1e+00 9.714e-17 3.0531e-16 -6.895e-17">
+                                <body name="L_left_forearm_pinky_dist" pos="-0.0000000 -0.0200000 -0.0000000" quat="1e+00 1.1102e-16 3.0531e-16 -6.895e-17">
                                     <inertial mass="0.0020185" pos="-0.0013338 -0.0100329 0.0000086" diaginertia="1.394342e-07 2.408746e-08 1.351094e-07" />
                                     <geom name="L_left_forearm_pinky_dist/visual" class="visual" mesh="gen_2_5_L/optimized/pinky_dist" />
                                     <geom name="L_left_forearm_pinky_dist/collision/capsule" class="collision" type="capsule" size="0.008983708514150781 0.010214905211860395" pos="0.001977 -0.012371 0.000005" quat="0.706983 -0.704163 -0.065805 0.000000" />
@@ -202,15 +209,6 @@
                     </body>
                 </body>
             </body>
-        </body>
-        <body name="L_left_forearm_gen1e1" pos="0.0000000 0.0000000 0.0000000" quat="1e+00 0e+00 0e+00 0e+00">
-            <inertial mass="2.4019292" pos="-0.0000202 0.1033821 0.0167693" diaginertia="1.077218e-02 2.860097e-03 1.065339e-02" />
-            <geom name="L_left_forearm_gen1e1/visual" class="visual" mesh="gen_2_5_L/optimized/gen1e1" />
-            <geom name="L_left_forearm_gen1e1/collision/capsule" class="collision" type="capsule" size="0.061917331709023894 0.09122346244772792" pos="-0.000003 0.117327 0.024512" quat="0.720795 -0.693148 0.000086 0.000000" contype="511" conaffinity="2304" />
-            <!--Primitive collision: CapsulePrimitive - radius=0.0619, length=0.1824-->
-            <site name="L_left_forearm_gen1e1/mountpt_gen1forearm" pos="-0.0000000 -0.0020000 0.0200000" rgba="0 0.9 0.9 0.9" size="0.004" quat="5e-01 5e-01 -5e-01 5e-01" />
-            <camera name="L_wrist_camera" pos="0.0000900 0.2364449 0.0780302" quat="6.427876e-01 7.660444e-01 -4.66328e-15 -3.84969e-15" fovy="96" />
-            <site name="L_wrist_camera" class="site/keypoint" pos="0.0000900 0.2206880 0.0752518" quat="4.66328e-15 3.84969e-15 6.427876e-01 7.660444e-01" />
         </body>
     </body>
 </mujocoinclude>

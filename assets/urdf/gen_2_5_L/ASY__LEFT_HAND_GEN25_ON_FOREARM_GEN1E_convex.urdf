@@ -40,14 +40,31 @@
 
     For licensing inquiries, contact Proception Inc. at contact@proception.ai.
 -->
-    <!-- Base wrapper: re-orients the exported root [L_left_forearm_gen1e] into the URDF world frame. -->
+    <!-- Base wrapper: re-orients the exported root [L_left_forearm_gen1e1] into the URDF world frame. -->
     <link name="L_base" />
     <joint type="fixed" name="L_base_anchor">
         <parent link="L_base" />
-        <child link="L_left_forearm_gen1e" />
+        <child link="L_left_forearm_gen1e1" />
         <origin xyz="0.0000000 0.0000000 0.0000000" rpy="1.570796e+00 -0e+00 1.570796e+00" />
     </joint>
     <!-- Generated Body Links -->
+    <link name="L_left_forearm_gen1e1">
+        <visual name="L_gen1e1/visual">
+            <geometry>
+                <mesh filename="gen_2_5_L/optimized/left_forearm_gen1e1.obj" />
+            </geometry>
+        </visual>
+        <collision name="L_gen1e1/collision">
+            <geometry>
+                <mesh filename="gen_2_5_L/convex/left_forearm_gen1e1.obj" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="2.4019292" />
+            <origin xyz="-0.0000202 0.1033821 0.0167693" />
+            <inertia ixx="1.077218e-02" iyy="2.860097e-03" izz="1.065339e-02" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+    </link>
     <link name="L_left_forearm_wrist_base">
         <visual name="L_wrist_base/visual">
             <geometry>
@@ -384,8 +401,8 @@
         </collision>
         <inertial>
             <mass value="0.0081566" />
-            <origin xyz="0.0022236 0.0015569 -0.0001353" />
-            <inertia ixx="4.575859e-07" iyy="4.788892e-07" izz="3.264618e-07" ixy="0.0" ixz="0.0" iyz="0.0" />
+            <origin xyz="0.0017449 0.0020794 -0.0001353" />
+            <inertia ixx="4.736505e-07" iyy="4.628246e-07" izz="3.264618e-07" ixy="0.0" ixz="0.0" iyz="0.0" />
         </inertial>
     </link>
     <link name="L_left_forearm_pinky_prox">
@@ -439,28 +456,11 @@
             <inertia ixx="1.394342e-07" iyy="2.408746e-08" izz="1.351094e-07" ixy="0.0" ixz="0.0" iyz="0.0" />
         </inertial>
     </link>
-    <link name="L_left_forearm_gen1e1">
-        <visual name="L_gen1e1/visual">
-            <geometry>
-                <mesh filename="gen_2_5_L/optimized/left_forearm_gen1e1.obj" />
-            </geometry>
-        </visual>
-        <collision name="L_gen1e1/collision">
-            <geometry>
-                <mesh filename="gen_2_5_L/convex/left_forearm_gen1e1.obj" />
-            </geometry>
-        </collision>
-        <inertial>
-            <mass value="2.4019292" />
-            <origin xyz="-0.0000202 0.1033821 0.0167693" />
-            <inertia ixx="1.077218e-02" iyy="2.860097e-03" izz="1.065339e-02" ixy="0.0" ixz="0.0" iyz="0.0" />
-        </inertial>
-    </link>
     <!-- Generated Joints -->
-    <joint type="fixed" name="L_ASY__LEFT_HAND_GEN25_ON_FOREARM_GEN1E/ASY__LEFT_HAND_GEN251/Rigid_1">
+    <joint type="fixed" name="L_ASY__LEFT_HAND_GEN25_ON_FOREARM_GEN1E/Rigid_6">
         <parent link="L_left_forearm_gen1e1" />
         <child link="L_left_forearm_wrist_base" />
-        <origin xyz="0.0000000 0.2132000 0.0154500" rpy="-3.313e-17 4.02e-17 2.776e-17" />
+        <origin xyz="0.0000000 0.2132000 0.0154500" rpy="-0e+00 1.1102e-16 -1.140754e-14" />
         <axis xyz="0 0 1" />
     </joint>
     <joint type="revolute" name="L_wrist_abd">
@@ -487,21 +487,21 @@
     <joint type="revolute" name="L_t1_TM">
         <parent link="L_left_forearm_thumb_trap" />
         <child link="L_left_forearm_thumb_meta" />
-        <origin xyz="0.0100000 0.0000000 0.0037500" rpy="1.570796e+00 -2.70834e-15 1.17863e-15" />
+        <origin xyz="0.0100000 0.0000000 0.0037500" rpy="1.570796e+00 -2.73609e-15 1.20638e-15" />
         <axis xyz="0 0 1" />
         <limit lower="-3.490658e-01" upper="6.981317e-01" effort="0" velocity="0" />
     </joint>
     <joint type="revolute" name="L_t2_MCP">
         <parent link="L_left_forearm_thumb_meta" />
         <child link="L_left_forearm_thumb_prox" />
-        <origin xyz="0.0250000 0.0000000 -0.0000000" rpy="3.8459e-16 5.235988e-01 1.570796e+00" />
+        <origin xyz="0.0250000 -0.0000000 -0.0000000" rpy="2.564e-16 5.235988e-01 1.570796e+00" />
         <axis xyz="0 0 1" />
         <limit lower="-5.235988e-01" upper="1.22173e+00" effort="0" velocity="0" />
     </joint>
     <joint type="revolute" name="L_t3_DIP">
         <parent link="L_left_forearm_thumb_prox" />
         <child link="L_left_forearm_thumb_dist" />
-        <origin xyz="0.0042870 -0.0320000 0.0000000" rpy="3.019e-17 -1.44329e-15 3.717e-17" />
+        <origin xyz="0.0042870 -0.0320000 -0.0000000" rpy="2.44e-18 -1.44329e-15 3.717e-17" />
         <axis xyz="0 0 1" />
         <limit lower="-7.853982e-01" upper="3.490658e-01" effort="0" velocity="0" />
     </joint>
@@ -557,7 +557,7 @@
     <joint type="revolute" name="L_m3_DIP">
         <parent link="L_left_forearm_gen2612_med" />
         <child link="L_left_forearm_gen2612_dist" />
-        <origin xyz="-0.0000000 -0.0200000 0.0000000" rpy="2.498e-16 9.4369e-16 5.011e-17" />
+        <origin xyz="-0.0000000 -0.0200000 0.0000000" rpy="2.7756e-16 9.4369e-16 5.011e-17" />
         <axis xyz="0 0 1" />
         <limit lower="0e+00" upper="1.570796e+00" effort="0" velocity="0" />
     </joint>
@@ -578,14 +578,14 @@
     <joint type="revolute" name="L_r2_PIP">
         <parent link="L_left_forearm_prox" />
         <child link="L_left_forearm_med" />
-        <origin xyz="0.0048480 -0.0420000 0.0000000" rpy="1.1102e-16 -9.4369e-16 -5.705e-17" />
+        <origin xyz="0.0048480 -0.0420000 0.0000000" rpy="1.6653e-16 -9.4369e-16 -5.705e-17" />
         <axis xyz="0 0 1" />
         <limit lower="-7.853982e-01" upper="1.570796e+00" effort="0" velocity="0" />
     </joint>
     <joint type="revolute" name="L_r3_DIP">
         <parent link="L_left_forearm_med" />
         <child link="L_left_forearm_dist" />
-        <origin xyz="-0.0000000 -0.0200000 -0.0000000" rpy="2.7756e-16 9.4369e-16 5.011e-17" />
+        <origin xyz="-0.0000000 -0.0200000 0.0000000" rpy="2.7756e-16 9.4369e-16 5.011e-17" />
         <axis xyz="0 0 1" />
         <limit lower="0e+00" upper="1.570796e+00" effort="0" velocity="0" />
     </joint>
@@ -599,28 +599,22 @@
     <joint type="revolute" name="L_p1_MCP">
         <parent link="L_left_forearm_pinky_meta" />
         <child link="L_left_forearm_pinky_prox" />
-        <origin xyz="0.0057341 0.0040150 -0.0010000" rpy="2.181662e+00 -1.570796e+00 0e+00" />
+        <origin xyz="0.0044995 0.0053623 -0.0010000" rpy="2.443461e+00 -1.570796e+00 0e+00" />
         <axis xyz="0 0 1" />
         <limit lower="-2.617994e-01" upper="1.570796e+00" effort="0" velocity="0" />
     </joint>
     <joint type="revolute" name="L_p2_PIP">
         <parent link="L_left_forearm_pinky_prox" />
         <child link="L_left_forearm_pinky_med" />
-        <origin xyz="0.0048480 -0.0320000 -0.0000000" rpy="-1.1102e-16 3.3307e-16 -1.3272e-16" />
+        <origin xyz="0.0048480 -0.0320000 0.0000000" rpy="-1.1102e-16 3.3307e-16 -1.3272e-16" />
         <axis xyz="0 0 1" />
         <limit lower="-7.853982e-01" upper="1.570796e+00" effort="0" velocity="0" />
     </joint>
     <joint type="revolute" name="L_p3_DIP">
         <parent link="L_left_forearm_pinky_med" />
         <child link="L_left_forearm_pinky_dist" />
-        <origin xyz="-0.0000000 -0.0200000 0.0000000" rpy="1.9429e-16 6.1062e-16 -1.379e-16" />
+        <origin xyz="-0.0000000 -0.0200000 -0.0000000" rpy="2.2204e-16 6.1062e-16 -1.379e-16" />
         <axis xyz="0 0 1" />
         <limit lower="0e+00" upper="1.570796e+00" effort="0" velocity="0" />
-    </joint>
-    <link name="L_left_forearm_gen1e" />
-    <joint type="fixed" name="L_left_forearm_gen1e1/weld">
-        <parent link="L_left_forearm_gen1e" />
-        <child link="L_left_forearm_gen1e1" />
-        <origin xyz="0.0000000 0.0000000 0.0000000" rpy="0e+00 -0e+00 0e+00" />
     </joint>
 </robot>

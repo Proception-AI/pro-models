@@ -40,14 +40,31 @@
 
     For licensing inquiries, contact Proception Inc. at contact@proception.ai.
 -->
-    <!-- Base wrapper: re-orients the exported root [R_right_forearm_gen1e] into the URDF world frame. -->
+    <!-- Base wrapper: re-orients the exported root [R_right_forearm_gen1e1] into the URDF world frame. -->
     <link name="R_base" />
     <joint type="fixed" name="R_base_anchor">
         <parent link="R_base" />
-        <child link="R_right_forearm_gen1e" />
+        <child link="R_right_forearm_gen1e1" />
         <origin xyz="0.0000000 0.0000000 0.0000000" rpy="1.570796e+00 -0e+00 1.570796e+00" />
     </joint>
     <!-- Generated Body Links -->
+    <link name="R_right_forearm_gen1e1">
+        <visual name="R_gen1e1/visual">
+            <geometry>
+                <mesh filename="gen_2_5_R/optimized/right_forearm_gen1e1.obj" />
+            </geometry>
+        </visual>
+        <collision name="R_gen1e1/collision">
+            <geometry>
+                <mesh filename="gen_2_5_R/convex/right_forearm_gen1e1.obj" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="2.4019292" />
+            <origin xyz="-0.0000204 0.1035580 0.0167831" />
+            <inertia ixx="1.084447e-02" iyy="2.85874e-03" izz="1.072695e-02" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+    </link>
     <link name="R_right_forearm_wrist_base">
         <visual name="R_wrist_base/visual">
             <geometry>
@@ -384,8 +401,8 @@
         </collision>
         <inertial>
             <mass value="0.0081566" />
-            <origin xyz="0.0022235 0.0015570 0.0001353" />
-            <inertia ixx="4.575795e-07" iyy="4.788956e-07" izz="3.264618e-07" ixy="0.0" ixz="0.0" iyz="0.0" />
+            <origin xyz="0.0017448 0.0020795 0.0001353" />
+            <inertia ixx="4.736438e-07" iyy="4.628313e-07" izz="3.264618e-07" ixy="0.0" ixz="0.0" iyz="0.0" />
         </inertial>
     </link>
     <link name="R_right_forearm_pinky_prox">
@@ -439,28 +456,11 @@
             <inertia ixx="1.394342e-07" iyy="2.408746e-08" izz="1.351094e-07" ixy="0.0" ixz="0.0" iyz="0.0" />
         </inertial>
     </link>
-    <link name="R_right_forearm_gen1e1">
-        <visual name="R_gen1e1/visual">
-            <geometry>
-                <mesh filename="gen_2_5_R/optimized/right_forearm_gen1e1.obj" />
-            </geometry>
-        </visual>
-        <collision name="R_gen1e1/collision">
-            <geometry>
-                <mesh filename="gen_2_5_R/convex/right_forearm_gen1e1.obj" />
-            </geometry>
-        </collision>
-        <inertial>
-            <mass value="2.4019292" />
-            <origin xyz="-0.0000204 0.1035580 0.0167831" />
-            <inertia ixx="1.084447e-02" iyy="2.85874e-03" izz="1.072695e-02" ixy="0.0" ixz="0.0" iyz="0.0" />
-        </inertial>
-    </link>
     <!-- Generated Joints -->
-    <joint type="fixed" name="R_ASY__RIGHT_HAND_GEN25_ON_FOREARM_GEN1E/ASY__RIGHT_HAND_GEN251/Rigid_1">
+    <joint type="fixed" name="R_ASY__RIGHT_HAND_GEN25_ON_FOREARM_GEN1E/Rigid_6">
         <parent link="R_right_forearm_gen1e1" />
         <child link="R_right_forearm_wrist_base" />
-        <origin xyz="0.0000000 0.2132000 0.0154500" rpy="2.775e-17 0e+00 -8.327e-17" />
+        <origin xyz="0.0000000 0.2132000 0.0154500" rpy="-4.163e-17 -2.776e-17 -1.099121e-14" />
         <axis xyz="0 0 1" />
     </joint>
     <joint type="revolute" name="R_wrist_abd">
@@ -487,14 +487,14 @@
     <joint type="revolute" name="R_t1_TM">
         <parent link="R_right_forearm_thumb_trap" />
         <child link="R_right_forearm_thumb_meta" />
-        <origin xyz="0.0100000 -0.0000000 -0.0037500" rpy="1.570796e+00 9.2858e-16 3.141593e+00" />
+        <origin xyz="0.0100000 -0.0000000 -0.0037500" rpy="1.570796e+00 9.0083e-16 3.141593e+00" />
         <axis xyz="0 0 1" />
         <limit lower="-3.490658e-01" upper="6.981317e-01" effort="0" velocity="0" />
     </joint>
     <joint type="revolute" name="R_t2_MCP">
         <parent link="R_right_forearm_thumb_meta" />
         <child link="R_right_forearm_thumb_prox" />
-        <origin xyz="-0.0250000 -0.0000000 0.0000000" rpy="3.205e-17 -5.235988e-01 -1.570796e+00" />
+        <origin xyz="-0.0250000 0.0000000 -0.0000000" rpy="-3.205e-17 -5.235988e-01 -1.570796e+00" />
         <axis xyz="0 0 1" />
         <limit lower="-5.235988e-01" upper="1.22173e+00" effort="0" velocity="0" />
     </joint>
@@ -557,7 +557,7 @@
     <joint type="revolute" name="R_m3_DIP">
         <parent link="R_right_forearm_gen2612_med" />
         <child link="R_right_forearm_gen2612_dist" />
-        <origin xyz="-0.0000000 -0.0200000 -0.0000000" rpy="2.7756e-16 9.4369e-16 5.011e-17" />
+        <origin xyz="-0.0000000 -0.0200000 -0.0000000" rpy="2.498e-16 9.4369e-16 5.011e-17" />
         <axis xyz="0 0 1" />
         <limit lower="0e+00" upper="1.570796e+00" effort="0" velocity="0" />
     </joint>
@@ -599,28 +599,22 @@
     <joint type="revolute" name="R_p1_MCP">
         <parent link="R_right_forearm_pinky_meta" />
         <child link="R_right_forearm_pinky_prox" />
-        <origin xyz="0.0057341 0.0040150 0.0010000" rpy="-2.181662e+00 1.570796e+00 0e+00" />
+        <origin xyz="0.0044995 0.0053623 0.0010000" rpy="-2.443461e+00 1.570796e+00 0e+00" />
         <axis xyz="0 0 1" />
         <limit lower="-2.617994e-01" upper="1.570796e+00" effort="0" velocity="0" />
     </joint>
     <joint type="revolute" name="R_p2_PIP">
         <parent link="R_right_forearm_pinky_prox" />
         <child link="R_right_forearm_pinky_med" />
-        <origin xyz="0.0048480 -0.0320000 -0.0000000" rpy="-2.2204e-16 3.3307e-16 -1.3272e-16" />
+        <origin xyz="0.0048480 -0.0320000 -0.0000000" rpy="-5.551e-17 3.3307e-16 -1.3272e-16" />
         <axis xyz="0 0 1" />
         <limit lower="-7.853982e-01" upper="1.570796e+00" effort="0" velocity="0" />
     </joint>
     <joint type="revolute" name="R_p3_DIP">
         <parent link="R_right_forearm_pinky_med" />
         <child link="R_right_forearm_pinky_dist" />
-        <origin xyz="-0.0000000 -0.0200000 0.0000000" rpy="2.7756e-16 6.1062e-16 -1.379e-16" />
+        <origin xyz="-0.0000000 -0.0200000 -0.0000000" rpy="2.2204e-16 6.1062e-16 -1.379e-16" />
         <axis xyz="0 0 1" />
         <limit lower="0e+00" upper="1.570796e+00" effort="0" velocity="0" />
-    </joint>
-    <link name="R_right_forearm_gen1e" />
-    <joint type="fixed" name="R_right_forearm_gen1e1/weld">
-        <parent link="R_right_forearm_gen1e" />
-        <child link="R_right_forearm_gen1e1" />
-        <origin xyz="0.0000000 0.0000000 0.0000000" rpy="0e+00 -0e+00 0e+00" />
     </joint>
 </robot>
